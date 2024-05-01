@@ -3,6 +3,7 @@ import TypingAnimation from "../../Components/Commons/TypingAnimation";
 import FileIcon from "../../Components/Icons/file";
 import GitHubIcon from "../../Components/Icons/github";
 import ProjectCard from "../../Components/Commons/ProjectCard";
+import Title from "../../Components/Icons/title";
 import projectBastion from "../../img/projet-bastion.PNG";
 import projectCoiffeur from "../../img/projet-coiffeur.jpeg";
 
@@ -23,14 +24,14 @@ function Home() {
                         Retrouvez mon CV
                     </button>
                     <div className="flex flex-row mt-10 space-x-10">
-                        <button class="rounded-full flex bg-[#5fb6d3]  gap-x-2 space-x-10 hover:bg-[#2ba8d172] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600">
+                        <a href="https://github.com/Atlasentinel" target="_blank" class="rounded-full flex bg-[#5fb6d3] gap-x-2 space-x-10 hover:bg-[#2ba8d172] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600">
                             <GitHubIcon size="20" stroke={1.5} />
                             GitHub
-                        </button>
-                        <button class=" flex rounded-full bg-[#d3825f]  gap-x-2 hover:bg-[#d25e2c7d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600">
+                        </a>
+                        <a href="mailto:noeziadi@outlook.com" class="flex rounded-full bg-[#d3825f] gap-x-2 hover:bg-[#d25e2c7d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600">
                             <EmailIcon size="20" stroke={1.5} />
                             Me contacter
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -41,7 +42,7 @@ function Home() {
                     </div>
                     <div className="flex flex-col h-fit mr-10   rounded-lg place-content-center mx-auto max-w-3xl py-10 sm:py-10 particles-line w-screen">
                         <div className="flex mb-4">
-                            <p class="w-fit h-fit rounded-md shadow-lg shadow-[#bdc8ff] place-content-ce text-base font-extralight leading-7 bg-[#687ef0] p-2 text-white  ml-2 inline-block">
+                            <p class="w-fit h-fit rounded-md shadow-lg shadow-[#13151c] place-content-ce text-base font-extralight leading-7 bg-[#13151c] p-2 text-[#f9f9f9]  ml-2 inline-block">
                                 À propos de moi !
                             </p>
                             🍃
@@ -65,14 +66,18 @@ function Home() {
                 </div>
             </div>
             <div class="text-center py-10 sm:py-12 w-screen bg-gray-100 z-5">
-                <p class="flex items-start w-fit h-fit ml-10 mb-10 rounded-md shadow-lg shadow-[#bdc8ff] text-base font-extralight leading-7 bg-[#687ef0] p-2 text-white">
-                    Mes projets ! 
-                </p>
+                <Title title="Mes projets !" />
                 <div className="flex flex-row pl-44 space-x-20">
                     <ProjectCard title="Coiffeur" description="WebApp de prise de rendez-vous pour coiffeurs particulié." date_start="Mars 2024" date_end="..." img={projectCoiffeur} />
                     <ProjectCard title="Bastion" description="Projet de sécurité des accès d'un lieu physique." date_start="Octobre 2023" date_end="Septembre 2024" img={projectBastion} />
                     <ProjectCard title="Clapin" description="Site web de streaming de film pour studio indépendant." date_start="Février 2024" date_end="..." img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqySNtX6zQ1DXwkk7go2V2M-LgNs9O9NE1v27Sp8l9lg&s" />
                 </div>
+            </div>
+            <div class="text-center py-10 sm:py-12 w-screen bg-white z-5">
+                <Title title="Mes formations !" />
+            </div>
+            <div class="text-center py-10 sm:py-6 w-screen bg-slate-50 z-5">
+                <span className="text-sm text-gray-400">© 2023 <a href="/" className="hover:underline">Noé ZIADI</a>. Tous droits réservés.</span>
             </div>
         </div >
     )
