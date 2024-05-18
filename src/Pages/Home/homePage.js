@@ -77,7 +77,7 @@ function Home() {
             </div>
             <div class="text-center py-10 sm:py-12 w-screen bg-white z-5">
                 <Title title="Mes compétences techniques !" />
-                <marquee scrollamount="4">
+                <marquee scrollamount="0">
                 <div className="flex flex-row space-x-10 pl-10 ">
                     <div className="flex flex-col">
                         <div className="flex flex-row font-bold text-white place-content-center rounded-tl-lg rounded-tr-lg p-1 bg-[#13151c]">
@@ -102,6 +102,21 @@ function Home() {
                             <ImgSkills link="https://pngimg.com/d/php_PNG45.png" />
                             <ImgSkills link="https://qwestore.com/png_images_min/10/The-Python-Logo-PNG-Projects-and-companies-that-7316.png" />
                             <ImgSkills link="https://cdn-icons-png.flaticon.com/512/1183/1183618.png" />
+                        </div>
+                    </div>
+                    <div className="flex flex-col">
+                        <div className="flex flex-row font-bold text-white place-content-center rounded-tl-lg rounded-tr-lg p-1 bg-[#13151c]">
+                            Autres
+                        </div>
+                        <div className="flex flex-row  space-x-2 place-content-center border-t-none border-4 rounded-bl-md rounded-br-md border-[#13151c] p-2">
+                            <ImgSkills link="https://seeklogo.com/images/U/unity-logo-988A22E703-seeklogo.com.png" />
+                            <ImgSkills link="https://www.docker.com/wp-content/uploads/2023/05/symbol_blue-docker-logo.png" />
+                            <ImgSkills link="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2048px-Git_icon.svg.png" />
+                            <ImgSkills link="https://cdn-icons-png.flaticon.com/512/25/25231.png" />
+                            <ImgSkills link="https://cdn.icon-icons.com/icons2/2699/PNG/512/gitkraken_logo_icon_169111.png" />      
+                            <ImgSkills link="https://logowik.com/content/uploads/images/gitlab8368.jpg" />  
+                            <ImgSkills link="https://cdn.worldvectorlogo.com/logos/postman.svg" />  
+                            <ImgSkills link="https://cdn.worldvectorlogo.com/logos/prestashop.svg" />                     
                         </div>
                     </div>
                 </div>
