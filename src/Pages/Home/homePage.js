@@ -6,6 +6,8 @@ import ProjectCard from "../../Components/Commons/ProjectCard";
 import Title from "../../Components/Icons/title";
 import projectBastion from "../../img/projet-bastion.PNG";
 import projectCoiffeur from "../../img/projet-coiffeur.jpeg";
+import Footer from "../../Components/footer";
+import ImgSkills from "../../Components/Commons/imgSkills";
 
 function Home() {
     const texts = ["Développeur Full Stack 💻", "Alternant chez CHAUSSEA 👟", "Futur Ingénieur I.A 🤖", "En train de dormir 😴"];
@@ -67,18 +69,45 @@ function Home() {
             </div>
             <div class="text-center py-10 sm:py-12 w-screen bg-gray-100 z-5">
                 <Title title="Mes projets !" />
-                <div className="flex flex-row pl-44 space-x-20">
+                <div className="flex flex-row pl-28 space-x-20">
                     <ProjectCard title="Coiffeur" description="WebApp de prise de rendez-vous pour coiffeurs particulié." date_start="Mars 2024" date_end="..." img={projectCoiffeur} />
-                    <ProjectCard title="Bastion" description="Projet de sécurité des accès d'un lieu physique." date_start="Octobre 2023" date_end="Septembre 2024" img={projectBastion} />
+                    <ProjectCard title="Bastion" description="Projet de sécurité des accès d'un lieu physique." date_start="Octobre 2023" date_end="..." img={projectBastion} />
                     <ProjectCard title="Clapin" description="Site web de streaming de film pour studio indépendant." date_start="Février 2024" date_end="..." img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqySNtX6zQ1DXwkk7go2V2M-LgNs9O9NE1v27Sp8l9lg&s" />
                 </div>
             </div>
             <div class="text-center py-10 sm:py-12 w-screen bg-white z-5">
-                <Title title="Mes formations !" />
+                <Title title="Mes compétences techniques !" />
+                <marquee scrollamount="4">
+                <div className="flex flex-row space-x-10 pl-10 ">
+                    <div className="flex flex-col">
+                        <div className="flex flex-row font-bold text-white place-content-center rounded-tl-lg rounded-tr-lg p-1 bg-[#13151c]">
+                            Stack Web
+                        </div>
+                        <div className="flex flex-row space-x-2 place-content-center border-t-none border-4 rounded-bl-md rounded-br-md border-[#13151c] p-2">
+                            <ImgSkills link="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx7zQzheKgsaUJVceUY7qh1BQ8ALn-LwHM9_91-Mbvsg&s" />
+                            <ImgSkills link="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png" />
+                            <ImgSkills link="https://seeklogo.com/images/J/javascript-logo-E967E87D74-seeklogo.com.png" />
+                            <ImgSkills link="https://3.imimg.com/data3/TK/CW/MY-6654490/jquery-250x250.jpg" />
+                            <ImgSkills link="https://pngimg.com/d/php_PNG45.png" />
+                            <ImgSkills link="https://cdn-icons-png.flaticon.com/512/3161/3161133.png" />
+                            <ImgSkills link="https://cdn-icons-png.flaticon.com/512/1183/1183621.png" />
+                        </div>
+                    </div>
+                    <div className="flex flex-col">
+                        <div className="flex flex-row font-bold text-white place-content-center rounded-tl-lg rounded-tr-lg p-1 bg-[#13151c]">
+                            Stack BackEnd
+                        </div>
+                        <div className="flex flex-row  space-x-2 place-content-center border-t-none border-4 rounded-bl-md rounded-br-md border-[#13151c] p-2">
+                            <ImgSkills link="https://cdn.icon-icons.com/icons2/2415/PNG/512/csharp_plain_logo_icon_146577.png" />
+                            <ImgSkills link="https://pngimg.com/d/php_PNG45.png" />
+                            <ImgSkills link="https://qwestore.com/png_images_min/10/The-Python-Logo-PNG-Projects-and-companies-that-7316.png" />
+                            <ImgSkills link="https://cdn-icons-png.flaticon.com/512/1183/1183618.png" />
+                        </div>
+                    </div>
+                </div>
+                </marquee>
             </div>
-            <div class="text-center py-10 sm:py-6 w-screen bg-slate-50 z-5">
-                <span className="text-sm text-gray-400">© 2023 <a href="/" className="hover:underline">Noé ZIADI</a>. Tous droits réservés.</span>
-            </div>
+            <Footer />
         </div >
     )
 
