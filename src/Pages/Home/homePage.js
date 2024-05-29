@@ -39,10 +39,10 @@ function Home() {
             </div>
             <div class="text-center py-10 sm:py-12 w-screen z-5">
                 <div className="flex flex-row">
-                    <div className="flex  place-content-center mx-auto max-w-3xl py-10 sm:py-10 particles-line w-screen">
+                    <div className="flex place-content-center mx-auto max-w-3xl py-10 sm:py-10 particles-line w-screen">
                         <img className="h-52 shadow-2xl shadow-black w-96 object-cover rounded-xl" src="https://media.licdn.com/dms/image/D4E03AQGy-L3F_HiZKQ/profile-displayphoto-shrink_200_200/0/1700505114370?e=2147483647&v=beta&t=TMyCpTEHIqJhr5kNSo_Sb-TmoODbI3PlmiUJc63aJEE" />
                     </div>
-                    <div className="flex flex-col h-fit mr-10   rounded-lg place-content-center mx-auto max-w-3xl py-10 sm:py-10 particles-line w-screen">
+                    <div className="flex flex-col h-fit rounded-lg place-content-center mx-auto max-w-3xl py-10 sm:py-10 particles-line w-screen">
                         <div className="flex mb-4">
                             <p class="w-fit h-fit rounded-md shadow-lg shadow-[#13151c] place-content-ce text-base font-extralight leading-7 bg-[#13151c] p-2 text-[#f9f9f9]  ml-2 inline-block">
                                 À propos de moi !
@@ -69,10 +69,10 @@ function Home() {
             </div>
             <div class="text-center py-10 sm:py-12 w-screen bg-gray-100 z-5">
                 <Title title="Mes projets !" />
-                <div className="flex flex-row pl-28 space-x-20">
-                    <ProjectCard title="Coiffeur" description="WebApp de prise de rendez-vous pour coiffeurs particulié." date_start="Mars 2024" date_end="..." img={projectCoiffeur} />
+                <div className="flex flex-row pl-10 w-screen space-x-20">
                     <ProjectCard title="Bastion" description="Projet de sécurité des accès d'un lieu physique." date_start="Octobre 2023" date_end="..." img={projectBastion} />
                     <ProjectCard title="Clapin" description="Site web de streaming de film pour studio indépendant." date_start="Février 2024" date_end="..." img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqySNtX6zQ1DXwkk7go2V2M-LgNs9O9NE1v27Sp8l9lg&s" />
+                    <ProjectCard title="Coiffeur" description="WebApp de prise de rendez-vous pour coiffeurs particulié." date_start="Mars 2024" date_end="..." img={projectCoiffeur} />
                 </div>
             </div>
             <div class="text-center py-10 sm:py-12 w-screen bg-white z-5">
@@ -85,12 +85,12 @@ function Home() {
                         <ImgSkills link="https://seeklogo.com/images/J/javascript-logo-E967E87D74-seeklogo.com.png" />
                         <ImgSkills link="https://3.imimg.com/data3/TK/CW/MY-6654490/jquery-250x250.jpg" />
                         <ImgSkills link="https://cdn-icons-png.flaticon.com/512/1183/1183621.png" />
-                        
+
                         {/* Le web dynamique */}
                         <ImgSkills link="https://pngimg.com/d/php_PNG45.png" />
                         <ImgSkills link="https://cdn.icon-icons.com/icons2/2389/PNG/512/symfony_logo_icon_144821.png" />
                         <ImgSkills link="https://cdn-icons-png.flaticon.com/512/3161/3161133.png" />
-                        
+
                         {/* Les langages haut niveau */}
                         <ImgSkills link="https://cdn.icon-icons.com/icons2/2415/PNG/512/csharp_plain_logo_icon_146577.png" />
                         <ImgSkills link="https://qwestore.com/png_images_min/10/The-Python-Logo-PNG-Projects-and-companies-that-7316.png" />

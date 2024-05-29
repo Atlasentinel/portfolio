@@ -1,8 +1,8 @@
 *{
   outline: none;
 }
-body::-webkit-scrollbar{
-  display: none;
+*::-webkit-scrollbar{
+  display: none !important;
 }
 body {
   margin: 0;

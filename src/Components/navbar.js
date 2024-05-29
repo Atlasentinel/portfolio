@@ -21,7 +21,7 @@ function NavBar() {
     }, []);
 
     return (
-        <nav className={`bg-white border-gray-200 sm:p-2 fixed w-screen  ${scrolled ? 'shadow-lg' : ''} z-10`}>
+        <nav className={`bg-white border-gray-200 sm:p-2 fixed w-screen ${scrolled ? 'shadow-lg' : ''} z-10`}>
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse text-2xl">
                     Noé Ziadi
