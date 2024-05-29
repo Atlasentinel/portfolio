@@ -77,49 +77,36 @@ function Home() {
             </div>
             <div class="text-center py-10 sm:py-12 w-screen bg-white z-5">
                 <Title title="Mes compétences techniques !" />
-                <marquee scrollamount="0">
-                <div className="flex flex-row space-x-10 pl-10 ">
-                    <div className="flex flex-col">
-                        <div className="flex flex-row font-bold text-white place-content-center rounded-tl-lg rounded-tr-lg p-1 bg-[#13151c]">
-                            Stack Web
-                        </div>
-                        <div className="flex flex-row space-x-2 place-content-center border-t-none border-4 rounded-bl-md rounded-br-md border-[#13151c] p-2">
-                            <ImgSkills link="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx7zQzheKgsaUJVceUY7qh1BQ8ALn-LwHM9_91-Mbvsg&s" />
-                            <ImgSkills link="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png" />
-                            <ImgSkills link="https://seeklogo.com/images/J/javascript-logo-E967E87D74-seeklogo.com.png" />
-                            <ImgSkills link="https://3.imimg.com/data3/TK/CW/MY-6654490/jquery-250x250.jpg" />
-                            <ImgSkills link="https://pngimg.com/d/php_PNG45.png" />
-                            <ImgSkills link="https://cdn-icons-png.flaticon.com/512/3161/3161133.png" />
-                            <ImgSkills link="https://cdn-icons-png.flaticon.com/512/1183/1183621.png" />
-                        </div>
+                <marquee scrollamount="4">
+                    <div className="flex flex-row space-x-10 pl-10 ">
+                        {/* Le front */}
+                        <ImgSkills link="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx7zQzheKgsaUJVceUY7qh1BQ8ALn-LwHM9_91-Mbvsg&s" />
+                        <ImgSkills link="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png" />
+                        <ImgSkills link="https://seeklogo.com/images/J/javascript-logo-E967E87D74-seeklogo.com.png" />
+                        <ImgSkills link="https://3.imimg.com/data3/TK/CW/MY-6654490/jquery-250x250.jpg" />
+                        <ImgSkills link="https://cdn-icons-png.flaticon.com/512/1183/1183621.png" />
+                        
+                        {/* Le web dynamique */}
+                        <ImgSkills link="https://pngimg.com/d/php_PNG45.png" />
+                        <ImgSkills link="https://cdn.icon-icons.com/icons2/2389/PNG/512/symfony_logo_icon_144821.png" />
+                        <ImgSkills link="https://cdn-icons-png.flaticon.com/512/3161/3161133.png" />
+                        
+                        {/* Les langages haut niveau */}
+                        <ImgSkills link="https://cdn.icon-icons.com/icons2/2415/PNG/512/csharp_plain_logo_icon_146577.png" />
+                        <ImgSkills link="https://qwestore.com/png_images_min/10/The-Python-Logo-PNG-Projects-and-companies-that-7316.png" />
+                        <ImgSkills link="https://cdn-icons-png.flaticon.com/512/1183/1183618.png" />
+
+                        {/* Les logiciels */}
+                        <ImgSkills link="https://seeklogo.com/images/U/unity-logo-988A22E703-seeklogo.com.png" />
+                        <ImgSkills link="https://www.docker.com/wp-content/uploads/2023/05/symbol_blue-docker-logo.png" />
+                        <ImgSkills link="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2048px-Git_icon.svg.png" />
+                        <ImgSkills link="https://cdn-icons-png.flaticon.com/512/25/25231.png" />
+                        <ImgSkills link="https://cdn.icon-icons.com/icons2/2699/PNG/512/gitkraken_logo_icon_169111.png" />
+                        <ImgSkills link="https://logowik.com/content/uploads/images/gitlab8368.jpg" />
+                        <ImgSkills link="https://cdn.worldvectorlogo.com/logos/postman.svg" />
+                        <ImgSkills link="https://cdn.worldvectorlogo.com/logos/prestashop.svg" />
+
                     </div>
-                    <div className="flex flex-col">
-                        <div className="flex flex-row font-bold text-white place-content-center rounded-tl-lg rounded-tr-lg p-1 bg-[#13151c]">
-                            Stack BackEnd
-                        </div>
-                        <div className="flex flex-row  space-x-2 place-content-center border-t-none border-4 rounded-bl-md rounded-br-md border-[#13151c] p-2">
-                            <ImgSkills link="https://cdn.icon-icons.com/icons2/2415/PNG/512/csharp_plain_logo_icon_146577.png" />
-                            <ImgSkills link="https://pngimg.com/d/php_PNG45.png" />
-                            <ImgSkills link="https://qwestore.com/png_images_min/10/The-Python-Logo-PNG-Projects-and-companies-that-7316.png" />
-                            <ImgSkills link="https://cdn-icons-png.flaticon.com/512/1183/1183618.png" />
-                        </div>
-                    </div>
-                    <div className="flex flex-col">
-                        <div className="flex flex-row font-bold text-white place-content-center rounded-tl-lg rounded-tr-lg p-1 bg-[#13151c]">
-                            Autres
-                        </div>
-                        <div className="flex flex-row  space-x-2 place-content-center border-t-none border-4 rounded-bl-md rounded-br-md border-[#13151c] p-2">
-                            <ImgSkills link="https://seeklogo.com/images/U/unity-logo-988A22E703-seeklogo.com.png" />
-                            <ImgSkills link="https://www.docker.com/wp-content/uploads/2023/05/symbol_blue-docker-logo.png" />
-                            <ImgSkills link="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2048px-Git_icon.svg.png" />
-                            <ImgSkills link="https://cdn-icons-png.flaticon.com/512/25/25231.png" />
-                            <ImgSkills link="https://cdn.icon-icons.com/icons2/2699/PNG/512/gitkraken_logo_icon_169111.png" />      
-                            <ImgSkills link="https://logowik.com/content/uploads/images/gitlab8368.jpg" />  
-                            <ImgSkills link="https://cdn.worldvectorlogo.com/logos/postman.svg" />  
-                            <ImgSkills link="https://cdn.worldvectorlogo.com/logos/prestashop.svg" />                     
-                        </div>
-                    </div>
-                </div>
                 </marquee>
             </div>
             <Footer />
