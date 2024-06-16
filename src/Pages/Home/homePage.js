@@ -155,11 +155,11 @@ function Home() {
                     <Title title="Formations !" />
                     <div className="flex flex-row items-center">
                         <div className="flex flex-wrap justify-center">
-                            <StudyCard title="Bac STI2D" description="Sciences et Technologies de l'Industrie et du Développement Durable" option="Systèmes d'Informations et Numérique" city="Metz" date_start="2018 -> 2020" school="Lycée de la Communication"  />
+                            <StudyCard title="Bac STI2D" description="Sciences et Technologies de l'Industrie et du Développement Durable" option="Systèmes d'Informations et Numérique" city="Metz" date_start="2018 -> 2020" school="Lycée de la Communication" />
                             <StudyCard title="DUT Informatique" description="Diplôme Universitaire d'Informatique de Lorraine" option="Informatique" city="Metz" date_start="2021[❌]" school="Université de Lorraine" />
-                            <StudyCard title="BTS SIO" description="Services Informatiques aux Organisations"  option="Solutions Logiciels et Application Metier" city="Metz" date_start="2021 -> 2023" school="Lycée Technologique Robert Schuman" />
+                            <StudyCard title="BTS SIO" description="Services Informatiques aux Organisations" option="Solutions Logiciels et Application Metier" city="Metz" date_start="2021 -> 2023" school="Lycée Technologique Robert Schuman" />
                             <StudyCard title="Bachelor DFS" description="Centre de formation en Alternance" option="Développeur Full Stack" city="Metz" date_start="2023 -> 2024" school="Metz Numeric School" />
-                         </div>
+                        </div>
                     </div>
                 </div>
 

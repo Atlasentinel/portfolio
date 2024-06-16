@@ -9,7 +9,7 @@ function StudyCard({ title, description, option, city, date_start, school }) {
                         <span className="flex text-wrap mt-4 font-semibold">{description}</span>
                     </div>
                 </div>
-                <div className="flex flex-col p-2 pl-4 gap-2">
+                <div className="flex flex-col p-2 mb-2 pl-4 gap-2">
                     <span className="flex flex-row text-sm text-gray-400 font-bold">⚙&nbsp; {option}</span>
                     <span className="flex flex-row text-sm text-blue-400 font-medium">📍 &nbsp; {city}</span>
                     <span className="flex flex-row text-sm text-pink-400 font-bold">👨‍🎓&nbsp; {date_start}</span>

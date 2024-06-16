@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import MenuBar from './Icons/menuBar';
+import MenuCross from './Icons/menuCross';
 
 function NavBar() {
     const [scrolled, setScrolled] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     useEffect(() => {
         function handleScroll() {
@@ -26,7 +29,10 @@ function NavBar() {
                 <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse text-2xl">
                     Noé Ziadi
                 </a>
-                <div className="w-full md:block md:w-auto"  id="navbar-default">
+                <span onClick={() => setMenuOpen(!menuOpen)} className="md:hidden delay-50 hover:animate-spin">
+                  {menuOpen ? <MenuCross /> : <MenuBar />}
+                </span>
+                <div className={`${menuOpen ? 'block' : 'hidden'} md:block w-full md:w-auto`}  id="navbar-default">
                     <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
                         <li><a href="/#a-propos-de-moi" className="block py-2 px-3 ext-sky-950 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#5FACD3] md:p-0" aria-current="page">À propos de moi</a></li>
                         <li><a href="/#mes-projets" className="block py-2 px-3 ext-sky-950 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#5FACD3] md:p-0">Mes projets</a></li>
