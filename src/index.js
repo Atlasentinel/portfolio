@@ -5,12 +5,25 @@ import './index.css';
 import App from './App';
 import Error from './Pages/Error/errorPage';
 import reportWebVitals from './reportWebVitals';
+import ProjectPageRach from './Pages/Home/projectPageRach';
+import ProjectPageStreamBattle from './Pages/Home/projectPageStreamBattle';
+import ProjectNyceV from "./Pages/Home/projectNyceV";
+import ProjectCoiffeur from './Pages/Home/projectCoiffeur';
+import ProjectCreche from './Pages/Home/projectCreche';
+import ProjectBastion from './Pages/Home/projectBastion';
+import Home from './Pages/Home/homePage';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/rach" element={<ProjectPageRach />} />
+      <Route path="/stream-battle" element={<ProjectPageStreamBattle />} />
+      <Route path="/nycev" element={<ProjectNyceV />} />
+      <Route path="/coiffeur" element={<ProjectCoiffeur />} />
+      <Route path="/creche" element={<ProjectCreche />} />
+      <Route path="/bastion" element={<ProjectBastion />} />
       <Route path="*" element={<Error />} />
     </Routes>
   </BrowserRouter>

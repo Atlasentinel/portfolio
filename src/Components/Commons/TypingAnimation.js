@@ -21,9 +21,9 @@ function TypingAnimation({ texts, speed, pauseTime }) {
     const interval = setInterval(typePhrase, pauseTime + (2 * speed * texts[currentIndex].length));
     return () => clearInterval(interval);
   }, [texts, currentIndex, speed, pauseTime]);
-  
+
   return <span>{currentPhrase}</span>
-    
+
 };
-  
+
 export default TypingAnimation;

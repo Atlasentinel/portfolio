@@ -1,6 +1,22 @@
 import React, { useRef } from 'react';
 
-function TagTechno() {
+const tagStyles = {
+  PHP: 'w-fit h-fit bg-purple-400 text-purple-600 bg-opacity-20 text-sm rounded-md p-1',
+  SQL: 'w-fit h-fit bg-pink-400 text-pink-600 bg-opacity-20 text-sm rounded-md p-1',
+  HTML: 'w-fit h-fit bg-orange-400 text-orange-600 bg-opacity-20 text-sm rounded-md p-1',
+  JS: 'w-fit h-fit bg-yellow-400 text-yellow-600 bg-opacity-20 text-sm rounded-md p-1',
+  JQuery: 'w-fit h-fit bg-red-400 text-red-600 bg-opacity-20 text-sm rounded-md p-1',
+  CSS: 'w-fit h-fit bg-blue-400 text-blue-600 bg-opacity-20 text-sm rounded-md p-1',
+  NodeJS: 'w-fit h-fit bg-green-600 text-green-800 bg-opacity-20 text-sm rounded-md p-1',
+  ReactJS: 'w-fit h-fit bg-green-400 text-green-600 bg-opacity-20 text-sm rounded-md p-1',
+  Python: 'w-fit h-fit bg-yellow-600 text-yellow-800 bg-opacity-20 text-sm rounded-md p-1',
+  CPLUS: 'w-fit h-fit bg-orange-600 text-orange-800 bg-opacity-20 text-sm rounded-md p-1',
+  ARDUINO: 'w-fit h-fit bg-blue-600 text-blue-800 bg-opacity-20 text-sm rounded-md p-1',
+  RASPBERRY: 'w-fit h-fit bg-pink-600 text-pink-800 bg-opacity-20 text-sm rounded-md p-1',
+  CSHARP: 'w-fit h-fit bg-blue-200 text-blue-600 bg-opacity-20 text-sm rounded-md p-1',
+};
+
+function TagTechno({ array }) {
   const scrollContainer = useRef(null);
   let isDown = false;
   let startX;
@@ -27,26 +43,24 @@ function TagTechno() {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - scrollContainer.current.offsetLeft;
-    const walk = (x - startX) * 3; // The multiplier can be adjusted
+    const walk = (x - startX) * 3;
     scrollContainer.current.scrollLeft = scrollLeft - walk;
   };
 
   return (
     <div
-      className="flex p-2 pl-4 space-x-2 overflow-x-auto w-100 cursor-grab active:cursor-grabbing"
+      className="flex p-2 pl-4 select-none space-x-2 overflow-x-auto w-100 cursor-grab active:cursor-grabbing"
       ref={scrollContainer}
       onMouseDown={handleMouseDown}
       onMouseLeave={handleMouseLeave}
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
     >
-      <div className="bg-green-400 text-green-600 bg-opacity-20 text-sm rounded-md p-1">#ReactJS</div>
-      <div className="bg-purple-400 text-purple-600 bg-opacity-20 text-sm rounded-md p-1">#PHP</div>
-      <div className="bg-orange-400 text-orange-600 bg-opacity-20 text-sm rounded-md p-1">#HTML</div>
-      <div className="bg-yellow-400 text-yellow-600 bg-opacity-20 text-sm rounded-md p-1">#JS</div>
-      <div className="bg-red-400 text-red-600 bg-opacity-20 text-sm rounded-md p-1">#JQuery</div>
-      <div className="bg-blue-400 text-blue-600 bg-opacity-20 text-sm rounded-md p-1">#CSS</div>
-      <div className="bg-green-600 text-green-800 bg-opacity-20 text-sm rounded-md p-1">#NodeJS</div>
+      {array.map(tag => (
+        <div key={tag} className={tagStyles[tag]}>
+          #{tag}
+        </div>
+      ))}
     </div>
   );
 }
