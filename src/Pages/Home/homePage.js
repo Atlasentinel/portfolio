@@ -35,7 +35,7 @@ function Home() {
         setModalIsOpen(false);
     };
 
-    const texts = ["Développeur Full Stack 💻", "Alternant chez CHAUSSEA 👟", "Futur Ingénieur I.A 🤖", "En train de dormir 😴"];
+    const texts = ["Développeur Full Stack 💻", "Alternant chez CHAUSSEA 👟", "Futur Ingénieur I.A 🤖", "En train de dormir 😴", "Error 404 [Human not found]"];
     const bastionTags = ['HTML', 'CSS', 'JS', 'Python', 'ReactJS', 'NodeJS', 'RASPBERRY'];
     const coiffeurTags = ['HTML', 'CSS', 'JS', 'ReactJS', 'NodeJS'];
     const clapinTags = ['HTML', 'CSS', 'JS', 'ReactJS', 'NodeJS'];
@@ -122,7 +122,7 @@ function Home() {
                                 Je suis: <TypingAnimation texts={texts} speed={100} pauseTime={100} />|
                             </p>
                             <p class="font-extralight  text-left  max-w-xl text-sky-950 ml-2">
-                                Jeune pirate informatique de 22 ans 🏴‍☠️, je navigue sur les mers de la programmation avec envie et passion à la recherche du trésor de la connaissance.<br />
+                                Jeune pirate informatique de 22 ans 🏴‍☠️, je navigue sur les mers de la programmation avec envie et passion à la recherche du trésor de la connaissance ⛵.<br />
                                 <i>
                                     "Le fruit de nos echecs est le composte de notre réussite" - 2019
                                     <br />
