@@ -1,6 +1,6 @@
 function StudyCard({ title, description, option, city, date_start, school }) {
     return (
-        <div className="flex flex-col m-5 border hover:scale-110 cursor-pointer transition-all delay-150 bg-zinc-950 text-white w-80 h-100 rounded-md mb-10">
+        <div className="flex flex-col m-5 border-2 border-black hover:scale-110 cursor-pointer transition-all delay-150 bg-white text-black w-80 h-100 rounded-3xl mb-10">
             <div className="rounded-lg w-100">
                 <div className="flex flex-col p-4 py-4 ">
                     <h1 className="text-2xl font-semibold m-2">{title}</h1>

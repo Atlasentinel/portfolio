@@ -53,7 +53,7 @@ function Home() {
                         Étudiant Développeur Full-Stack en alternance
                     </p>
                     <p class="mt-6 font-extralight text-xl text-gray-400">
-                        Venez découvrir qui je suis à travers ce portfolio 🌱
+                        Venez découvrir qui je suis à travers ce portfolio🌱
                     </p>
                     <div class="mt-10 flex flex-col items-center justify-center gap-x-6">
                         <a onClick={openModal} class="rounded-md cursor-pointer flex bg-[#675fd3] hover:bg-[#8780f180] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600">

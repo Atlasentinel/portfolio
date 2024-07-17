@@ -9,7 +9,7 @@ const tagStyles = {
   CSS: 'w-fit h-fit bg-blue-400 text-blue-600 bg-opacity-20 text-sm rounded-md p-1',
   NodeJS: 'w-fit h-fit bg-green-600 text-green-800 bg-opacity-20 text-sm rounded-md p-1',
   ReactJS: 'w-fit h-fit bg-green-400 text-green-600 bg-opacity-20 text-sm rounded-md p-1',
-  Python: 'w-fit h-fit bg-yellow-600 text-yellow-800 bg-opacity-20 text-sm rounded-md p-1',
+  PYTHON: 'w-fit h-fit bg-yellow-600 text-yellow-800 bg-opacity-20 text-sm rounded-md p-1',
   CPLUS: 'w-fit h-fit bg-orange-600 text-orange-800 bg-opacity-20 text-sm rounded-md p-1',
   ARDUINO: 'w-fit h-fit bg-blue-600 text-blue-800 bg-opacity-20 text-sm rounded-md p-1',
   RASPBERRY: 'w-fit h-fit bg-pink-600 text-pink-800 bg-opacity-20 text-sm rounded-md p-1',

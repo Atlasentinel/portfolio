@@ -1,7 +1,7 @@
 import CalendarIcon from "../Icons/calendar";
 import LeftArrowIcon from "../Icons/leftArrow";
 import TagTechno from "./TagTechno";
-
+import {Link} from "react-router-dom";
 
 
 function ProjectCard({ img, title, description, date_start, date_end, array, link, available }) {
@@ -23,7 +23,7 @@ function ProjectCard({ img, title, description, date_start, date_end, array, lin
                 </div>
                 <TagTechno array={array} />
                 <div className="h-20 flex p-2 pl-4 py-4 place-content-center text-white font-semibold text-lg">
-                <a href={link} className={`flex flex-row rounded-md p-2 ${!available ? "bg-[#13151c] elay-50 hover:bg-[#222222] text-[#f9f9f9]" : "bg-red-700 text-white cursor-not-allowed"} `}> {!available ? "En savoir plus" : "⛔ Indisponible"}</a>
+                <Link to={link} className={`flex flex-row rounded-md p-2 ${!available ? "bg-[#13151c] elay-50 hover:bg-[#222222] text-[#f9f9f9]" : "bg-red-700 text-white cursor-not-allowed"} `}> {!available ? "En savoir plus" : "⛔ Indisponible"}</Link>
                 </div>
             </div>
         </div>
