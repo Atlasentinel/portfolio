@@ -8,6 +8,7 @@ const tagStyles = {
   JQuery: 'w-fit h-fit bg-red-400 text-red-600 bg-opacity-20 text-sm rounded-md p-1',
   CSS: 'w-fit h-fit bg-blue-400 text-blue-600 bg-opacity-20 text-sm rounded-md p-1',
   NodeJS: 'w-fit h-fit bg-green-600 text-green-800 bg-opacity-20 text-sm rounded-md p-1',
+  BunJS: 'w-fit h-fit bg-yellow-300 text-pink-600 bg-opacity-20 text-sm rounded-md p-1',
   ReactJS: 'w-fit h-fit bg-green-400 text-green-600 bg-opacity-20 text-sm rounded-md p-1',
   PYTHON: 'w-fit h-fit bg-yellow-600 text-yellow-800 bg-opacity-20 text-sm rounded-md p-1',
   CPLUS: 'w-fit h-fit bg-orange-600 text-orange-800 bg-opacity-20 text-sm rounded-md p-1',

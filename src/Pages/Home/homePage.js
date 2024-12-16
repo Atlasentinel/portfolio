@@ -12,6 +12,7 @@ import projectNycev from "../../img/projet-nycev.PNG";
 import projectRach from "../../img/projet-rach.jfif";
 import projetClapin from "../../img/projet-clapin.PNG"
 import projectStreamBattle from "../../img/projet-streamBattle.png";
+import judge from "../../img/judge.png";
 import Footer from "../../Components/footer";
 import Cross from '../../Components/Icons/cross';
 import ImgSkills from "../../Components/Commons/imgSkills";
@@ -35,13 +36,14 @@ function Home() {
         setModalIsOpen(false);
     };
 
-    const texts = ["Développeur Full Stack 💻", "Alternant chez CHAUSSEA 👟", "Futur Ingénieur I.A 🤖", "En train de dormir 😴", "Error 404 [Human not found]"];
-    const bastionTags = ['HTML', 'CSS', 'JS', 'Python', 'ReactJS', 'NodeJS', 'RASPBERRY'];
+    const texts = ["Développeur Full Stack 💻", "Ancien alternant chez Moovijob 😍","Ancien alternant chez CHAUSSEA 👟", "Futur Ingénieur I.A 🤖", "En train de dormir 😴", "Error 404 [Human not found]"];
+    const judgeTags = ['HTML', 'CSS', 'JS', 'BunJS', 'ReactJS'];
+    const bastionTags = ['HTML', 'CSS', 'JS', 'PYTHON', 'ReactJS', 'NodeJS', 'RASPBERRY'];
     const coiffeurTags = ['HTML', 'CSS', 'JS', 'ReactJS', 'NodeJS'];
     const clapinTags = ['HTML', 'CSS', 'JS', 'ReactJS', 'NodeJS'];
     const rachTags = ['HTML', 'CSS', 'JS', 'JQuery', 'PHP', 'SQL'];
     const cabaneTags = ['HTML', 'CSS', 'JS', 'JQuery', 'PHP', 'SQL'];
-    const nycevTags = ['HTML', 'CSS', 'JS', 'JQuery', 'PHP', 'SQL', 'RASPBERRY', 'CPLUS', 'ARDUINO', 'PYTHON'];
+    const nycevTags = ['HTML', 'CSS', 'JS', 'PYTHON', 'JQuery', 'PHP', 'SQL', 'RASPBERRY', 'CPLUS', 'ARDUINO'];
     const streamBattle = ['CSHARP']
 
     return (
@@ -50,7 +52,7 @@ function Home() {
             <div className="flex flex-col z-0">
                 <div id="contact" class="text-center py-10 sm:py-28 w-screen">
                     <p class="text-6xl font-bold text-sky-950">
-                        Étudiant Développeur Full-Stack en alternance
+                        Étudiant Mastère Ingénieurie Informatique en alternance
                     </p>
                     <p class="mt-6 font-extralight text-xl text-gray-400">
                         Venez découvrir qui je suis à travers ce portfolio🌱
@@ -140,6 +142,7 @@ function Home() {
                     <Title title="Mes projets !" />
                     <div className="flex flex-row items-center">
                         <div className="flex flex-wrap justify-center">
+                            <ProjectCard available="false" array={judgeTags} title="Judge" description="API de filtrage pour les évènements" date_start="Décembre 2024" date_end="...." img={judge} />
                             <ProjectCard link="creche" array={cabaneTags} title="La Cabane des lutins" description="WebApp de gestion de micro-crèches" date_start="Mai 2022" date_end="Juin 2022" img={projectCreche} />
                             <ProjectCard link="rach" array={rachTags} title="RACH" description="Catalogue de paires de chaussures" date_start="Janvier 2023" date_end="Février 2023" img={projectRach} />
                             <ProjectCard link="bastion" array={bastionTags} title="Bastion" description="Projet de sécurité des accès d'un lieu physique." date_start="Octobre 2023" date_end="Octobre 2O24" img={projectBastion} />
@@ -159,6 +162,7 @@ function Home() {
                             <StudyCard title="DUT Informatique" description="Diplôme Universitaire d'Informatique de Lorraine" option="Informatique" city="Metz" date_start="2021[❌]" school="Université de Lorraine" />
                             <StudyCard title="BTS SIO" description="Services Informatiques aux Organisations" option="Solutions Logiciels et Application Metier" city="Metz" date_start="2021 -> 2023" school="Lycée Technologique Robert Schuman" />
                             <StudyCard title="Bachelor DFS" description="Centre de formation en Alternance" option="Développeur Full Stack" city="Metz" date_start="2023 -> 2024" school="Metz Numeric School" />
+                            <StudyCard title="Mastère M2I" description="Centre de formation en Alternance" option="Management et Ingénieurie Informatique" city="Metz" date_start="2024 -> 2026" school="Metz Numeric School" />
                         </div>
                     </div>
                 </div>
