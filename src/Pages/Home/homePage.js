@@ -36,7 +36,7 @@ function Home() {
         setModalIsOpen(false);
     };
 
-    const texts = ["Développeur Full Stack 💻", "Ancien alternant chez Moovijob 😍","Ancien alternant chez CHAUSSEA 👟", "Futur Ingénieur I.A 🤖", "En train de dormir 😴", "Error 404 [Human not found]"];
+    const texts = ["Développeur Full Stack 💻", "Alternant chez Moovijob 😍","Ancien alternant chez CHAUSSEA 👟", "Futur Ingénieur I.A 🤖", "En train de dormir 😴", "Error 404 [Human not found]"];
     const judgeTags = ['HTML', 'CSS', 'JS', 'BunJS', 'ReactJS'];
     const bastionTags = ['HTML', 'CSS', 'JS', 'PYTHON', 'ReactJS', 'NodeJS', 'RASPBERRY'];
     const coiffeurTags = ['HTML', 'CSS', 'JS', 'ReactJS', 'NodeJS'];
