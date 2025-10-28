@@ -11,6 +11,7 @@ import ProjectNyceV from "./Pages/Home/projectNyceV";
 import ProjectCoiffeur from './Pages/Home/projectCoiffeur';
 import ProjectCreche from './Pages/Home/projectCreche';
 import ProjectBastion from './Pages/Home/projectBastion';
+import ProjectPixel from './Pages/Home/projectPixel';
 import Home from './Pages/Home/homePage';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -24,6 +25,7 @@ root.render(
       <Route path="/coiffeur" element={<ProjectCoiffeur />} />
       <Route path="/creche" element={<ProjectCreche />} />
       <Route path="/bastion" element={<ProjectBastion />} />
+      <Route path="/pixelwar" element={<ProjectPixel />} />
       <Route path="*" element={<Error />} />
     </Routes>
   </BrowserRouter>
