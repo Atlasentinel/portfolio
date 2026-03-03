@@ -12,6 +12,11 @@ import ProjectCoiffeur from './Pages/Home/projectCoiffeur';
 import ProjectCreche from './Pages/Home/projectCreche';
 import ProjectBastion from './Pages/Home/projectBastion';
 import ProjectPixel from './Pages/Home/projectPixel';
+import ProjectRoger from './Pages/Home/projectRoger';
+import ProjectStattrak from './Pages/Home/projectStattrak';
+import ProjectJustYapping from './Pages/Home/projectJustYapping';
+import ProjectEkea from './Pages/Home/projectEkea';
+import ProjectAnansi from './Pages/Home/ProjectAnansi';
 import Home from './Pages/Home/homePage';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -26,6 +31,11 @@ root.render(
       <Route path="/creche" element={<ProjectCreche />} />
       <Route path="/bastion" element={<ProjectBastion />} />
       <Route path="/pixelwar" element={<ProjectPixel />} />
+      <Route path="/roger" element={<ProjectRoger />} />
+      <Route path="/stattrak" element={<ProjectStattrak />} />
+      <Route path="/justyapping" element={<ProjectJustYapping />} />
+      <Route path="/ekea" element={<ProjectEkea />} />
+      <Route path="/anansi" element={<ProjectAnansi />} />
       <Route path="*" element={<Error />} />
     </Routes>
   </BrowserRouter>

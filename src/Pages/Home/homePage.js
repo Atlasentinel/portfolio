@@ -12,13 +12,19 @@ import projectCreche from "../../img/projet-creche.jpg";
 import projectNycev from "../../img/projet-nycev.PNG";
 import projectRach from "../../img/projet-rach.jfif";
 import projetClapin from "../../img/projet-clapin.PNG";
+import projectRoger from "../../img/r0ger_banner.jpg";
 import pixelwar from "../../img/pixelwar.PNG";
 import projectStreamBattle from "../../img/projet-streamBattle.png";
+import projectStattrak from "../../img/stattrak-banner.jpg";
+import projectJustYapping from "../../img/justyapping_banner.jpg";
+import projectEkea from "../../img/ekea_banner.jpg";
+import projectAnansi from "../../img/anansi_banner.jpg";
 import judge from "../../img/judge.png";
 import Footer from "../../Components/footer";
 import Cross from "../../Components/Icons/cross";
 import ImgSkills from "../../Components/Commons/imgSkills";
 import React, { useState } from "react";
+import pp from "../../img/pp.jpg";
 import Modal from "react-modal";
 import cv from "../../img/cv.PNG";
 import cvPDF from "../../files/cv.pdf";
@@ -46,6 +52,8 @@ function Home() {
     "Error 404 [Human not found]",
     "Plus fort que toi sur PixelWar 🖼️",
   ];
+  const anansi = ["GoLang"];
+  const justyapping = ["HTML", "CSS", "JS"];
   const pixelTags = ["HTML", "CSS", "JS", "NodeJS"];
   const judgeTags = ["HTML", "CSS", "JS", "BunJS", "ReactJS"];
   const bastionTags = [
@@ -111,7 +119,7 @@ function Home() {
       <div className="flex flex-col z-0">
         <div id="contact" class="text-center py-10 sm:py-28 w-screen">
           <h1 class="text-6xl font-bold text-sky-950">
-            Étudiant Mastère Architecture Logiciel et Ingénieurie Informatique
+            Étudiant Mastère Architecture Logicielle et Ingénierie Informatique
           </h1>
           <h2 class="mt-6 font-extralight text-xl text-gray-400">
             Venez découvrir qui je suis à travers ce portfolio🌱
@@ -192,7 +200,7 @@ function Home() {
               <img
                 className="h-52 shadow-2xl shadow-black w-96 object-cover rounded-xl"
                 alt="Image de Noé Ziadi"
-                src="https://media.licdn.com/dms/image/D4E03AQGy-L3F_HiZKQ/profile-displayphoto-shrink_200_200/0/1700505114370?e=2147483647&v=beta&t=TMyCpTEHIqJhr5kNSo_Sb-TmoODbI3PlmiUJc63aJEE"
+                src={pp}
               />
             </div>
             <div className="flex flex-col h-fit rounded-lg place-content-center mx-auto max-w-3xl py-10 sm:py-10 particles-line w-screen">
@@ -238,12 +246,54 @@ function Home() {
           <div className="flex flex-row items-center">
             <div className="flex flex-wrap justify-center">
               <ProjectCard
+                link="Anansi"
+                array={anansi}
+                title="Anansi"
+                description="Logicielle de partage de journeaux en p2p"
+                date_start="Février 2026"
+                img={projectAnansi}
+              />
+              <ProjectCard
+                link="ekea"
+                array={pixelTags}
+                title="Ekea"
+                description="Mini-jeux multijoueur autour des produits Ikea"
+                date_start="Janvier 2026"
+                date_end="Février 2026"
+                img={projectEkea}
+              />
+              <ProjectCard
+                link="justyapping"
+                array={justyapping}
+                title="JustYapping"
+                description="Générateur de tchat Twitch/Kick"
+                date_start="Janvier 2026"
+                date_end="Janvier 2026"
+                img={projectJustYapping}
+              />
+              <ProjectCard
+                link="stattrak"
+                array={pixelTags}
+                title="Stattrak"
+                description="Analyseur de CV par I.A"
+                date_start="Novembre 2025"
+                date_end="Décembre 2025"
+                img={projectStattrak}
+              />
+              <ProjectCard
+                link="roger"
+                array={pixelTags}
+                title="R0ger"
+                description="Service de partage de document sécurisé E2E 0-Trust"
+                date_start="Novembre 2026"
+                img={projectRoger}
+              />
+              <ProjectCard
                 link="pixelwar"
                 array={pixelTags}
                 title="PixelWar"
                 description="Canva de dessin collaboratif en temps réel"
                 date_start="Mai 2025"
-                date_end="...."
                 img={pixelwar}
               />
               <ProjectCard
@@ -252,17 +302,32 @@ function Home() {
                 title="Judge"
                 description="API de filtrage pour les évènements"
                 date_start="Décembre 2024"
-                date_end="...."
                 img={judge}
               />
               <ProjectCard
-                link="creche"
-                array={cabaneTags}
-                title="La Cabane des lutins"
-                description="WebApp de gestion de micro-crèches"
-                date_start="Mai 2022"
-                date_end="Juin 2022"
-                img={projectCreche}
+                link="bastion"
+                array={bastionTags}
+                title="Bastion"
+                description="Projet de sécurité des accès d'un lieu physique."
+                date_start="Octobre 2023"
+                date_end="Octobre 2024"
+                img={projectBastion}
+              />
+              <ProjectCard
+                link="coiffeur"
+                array={coiffeurTags}
+                title="Coiffeur"
+                description="WebApp de prise de rendez-vous pour coiffeurs particuliers."
+                date_start="Mars 2024"
+                img={projectCoiffeur}
+              />
+              <ProjectCard
+                available="false"
+                array={clapinTags}
+                title="Clapin"
+                description="Site web de streaming de film pour studio indépendant."
+                date_start="Février 2024"
+                img={projetClapin}
               />
               <ProjectCard
                 link="rach"
@@ -274,40 +339,13 @@ function Home() {
                 img={projectRach}
               />
               <ProjectCard
-                link="bastion"
-                array={bastionTags}
-                title="Bastion"
-                description="Projet de sécurité des accès d'un lieu physique."
-                date_start="Octobre 2023"
-                date_end="Octobre 2O24"
-                img={projectBastion}
-              />
-              <ProjectCard
-                available="false"
-                array={clapinTags}
-                title="Clapin"
-                description="Site web de streaming de film pour studio indépendant."
-                date_start="Février 2024"
-                date_end="..."
-                img={projetClapin}
-              />
-              <ProjectCard
-                link="coiffeur"
-                array={coiffeurTags}
-                title="Coiffeur"
-                description="WebApp de prise de rendez-vous pour coiffeurs particuliers."
-                date_start="Mars 2024"
-                date_end="..."
-                img={projectCoiffeur}
-              />
-              <ProjectCard
-                link="nycev"
-                array={nycevTags}
-                title="NYCEV"
-                description="Robot Agriculteur autonome"
-                date_start="Mars 2020"
-                date_end="..."
-                img={projectNycev}
+                link="creche"
+                array={cabaneTags}
+                title="La Cabane des lutins"
+                description="WebApp de gestion de micro-crèches"
+                date_start="Mai 2022"
+                date_end="Juin 2022"
+                img={projectCreche}
               />
               <ProjectCard
                 link="stream-battle"
@@ -317,6 +355,14 @@ function Home() {
                 date_start="Janvier 2021"
                 date_end="Janvier 2021"
                 img={projectStreamBattle}
+              />
+              <ProjectCard
+                link="nycev"
+                array={nycevTags}
+                title="NYCEV"
+                description="Robot Agriculteur autonome"
+                date_start="Mars 2020"
+                img={projectNycev}
               />
             </div>
           </div>

@@ -15,6 +15,7 @@ const tagStyles = {
   ARDUINO: 'w-fit h-fit bg-blue-600 text-blue-800 bg-opacity-20 text-sm rounded-md p-1',
   RASPBERRY: 'w-fit h-fit bg-pink-600 text-pink-800 bg-opacity-20 text-sm rounded-md p-1',
   CSHARP: 'w-fit h-fit bg-blue-200 text-blue-600 bg-opacity-20 text-sm rounded-md p-1',
+  GoLang: 'w-fit h-fit bg-blue-500 text-blue-700 bg-opacity-20 text-sm rounded-md p-1',
 };
 
 function TagTechno({ array }) {
