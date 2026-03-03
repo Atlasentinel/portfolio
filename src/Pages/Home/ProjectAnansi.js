@@ -29,10 +29,7 @@ function projectAnansi() {
                             </span>
                             <span>📍 &nbsp;&nbsp;: Metz</span>
                             <span>👾 : Site Web</span>
-                            <span>
-                                🌐 : anansi{" "}
-                                    [Pas encore disponible]
-                            </span>
+                            <span>🌐 : Anansi <span className="text-yellow-300">(pas encore dispo)</span></span>
                             <span>📅 : Février 2025</span>
                         </div>
                     </div>
