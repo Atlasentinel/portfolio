@@ -249,7 +249,7 @@ function Home() {
                 link="Anansi"
                 array={anansi}
                 title="Anansi"
-                description="Logicielle de partage de journaux en p2p"
+                description="Logiciel de partage de journaux en p2p"
                 date_start="Février 2026"
                 img={projectAnansi}
               />
