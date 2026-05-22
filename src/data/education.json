@@ -1,0 +1,77 @@
+[
+  {
+    "id": "bac-sti2d",
+    "title": "Bac STI2D",
+    "description": {
+      "fr": "Sciences et Technologies de l'Industrie et du Développement Durable",
+      "en": "Science and Technology of Industry and Sustainable Development"
+    },
+    "option": {
+      "fr": "Systèmes d'Informations et Numérique",
+      "en": "Information Systems and Digital"
+    },
+    "city": "Metz",
+    "school": "Lycée de la Communication",
+    "period": "2018 → 2020"
+  },
+  {
+    "id": "dut-info",
+    "title": "DUT Informatique",
+    "description": {
+      "fr": "Diplôme Universitaire d'Informatique de Lorraine",
+      "en": "University Diploma in Computer Science from Lorraine"
+    },
+    "option": {
+      "fr": "Informatique",
+      "en": "Computer Science"
+    },
+    "city": "Metz",
+    "school": "Université de Lorraine",
+    "period": "2021 [❌]"
+  },
+  {
+    "id": "bts-sio",
+    "title": "BTS SIO",
+    "description": {
+      "fr": "Services Informatiques aux Organisations",
+      "en": "IT Services for Organizations"
+    },
+    "option": {
+      "fr": "Solutions Logiciels et Application Metier",
+      "en": "Software Solutions and Business Applications"
+    },
+    "city": "Metz",
+    "school": "Lycée Technologique Robert Schuman",
+    "period": "2021 → 2023"
+  },
+  {
+    "id": "bachelor-dfs",
+    "title": "Bachelor DFS",
+    "description": {
+      "fr": "Centre de formation en Alternance",
+      "en": "Work-study Training Center"
+    },
+    "option": {
+      "fr": "Développeur Full Stack",
+      "en": "Full Stack Developer"
+    },
+    "city": "Metz",
+    "school": "Metz Numeric School",
+    "period": "2023 → 2024"
+  },
+  {
+    "id": "mastere-m2i",
+    "title": "Mastère M2I",
+    "description": {
+      "fr": "Centre de formation en Alternance",
+      "en": "Work-study Training Center"
+    },
+    "option": {
+      "fr": "Management et Ingénieurie Informatique",
+      "en": "IT Management and Engineering"
+    },
+    "city": "Metz",
+    "school": "Metz Numeric School",
+    "period": "2024 → 2026"
+  }
+]

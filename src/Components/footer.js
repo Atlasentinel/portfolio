@@ -1,9 +1,19 @@
+import { useLang } from "../contexts/LangContext";
+
 function Footer() {
-    return (
-        <div class="text-center py-10 sm:py-6 w-screen bg-slate-50 z-5">
-            <span className="text-sm text-gray-400">🌳 © 2025 <a href="/" className="hover:underline">Noé ZIADI</a>. Tous droits réservés. 🌳</span>
-        </div>
-    );
+  const { t } = useLang();
+
+  return (
+    <footer className="text-center py-8 w-screen bg-slate-50 border-t border-gray-100">
+      <span className="text-sm text-gray-400">
+        🌳 © {new Date().getFullYear()}{" "}
+        <a href="/" className="hover:text-[#675fd3] hover:underline transition-colors">
+          Noé ZIADI
+        </a>
+        . {t.footer.rights} 🌳
+      </span>
+    </footer>
+  );
 }
 
 export default Footer;

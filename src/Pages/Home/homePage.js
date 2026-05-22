@@ -1,114 +1,59 @@
-import { useRef } from "react";
-import NavBar from "../../Components/navbar";
-import EmailIcon from "../../Components/Icons/email";
-import TypingAnimation from "../../Components/Commons/TypingAnimation";
-import FileIcon from "../../Components/Icons/file";
-import GitHubIcon from "../../Components/Icons/github";
-import ProjectCard from "../../Components/Commons/ProjectCard";
-import Title from "../../Components/Icons/title";
-import projectBastion from "../../img/projet-bastion.PNG";
-import projectCoiffeur from "../../img/projet-coiffeur.jpeg";
-import projectCreche from "../../img/projet-creche.jpg";
-import projectNycev from "../../img/projet-nycev.PNG";
-import projectRach from "../../img/projet-rach.jfif";
-import projetClapin from "../../img/projet-clapin.PNG";
-import projectRoger from "../../img/r0ger_banner.jpg";
-import pixelwar from "../../img/pixelwar.PNG";
-import projectStreamBattle from "../../img/projet-streamBattle.png";
-import projectStattrak from "../../img/stattrak-banner.jpg";
-import projectJustYapping from "../../img/justyapping_banner.jpg";
-import projectEkea from "../../img/ekea_banner.jpg";
-import projectAnansi from "../../img/anansi_banner.jpg";
-import judge from "../../img/judge.png";
-import Footer from "../../Components/footer";
-import Cross from "../../Components/Icons/cross";
-import ImgSkills from "../../Components/Commons/imgSkills";
+import { useRef }     from "react";
 import React, { useState } from "react";
-import pp from "../../img/pp.jpg";
-import Modal from "react-modal";
-import cv from "../../img/cv.PNG";
+import Modal             from "react-modal";
+
+import NavBar            from "../../Components/navbar";
+import Footer            from "../../Components/footer";
+import EmailIcon         from "../../Components/Icons/email";
+import TypingAnimation   from "../../Components/Commons/TypingAnimation";
+import FileIcon          from "../../Components/Icons/file";
+import GitHubIcon        from "../../Components/Icons/github";
+import ProjectCard       from "../../Components/Commons/ProjectCard";
+import StudyCard         from "../../Components/Commons/StudyCard";
+import ImgSkills         from "../../Components/Commons/imgSkills";
+import Title             from "../../Components/Icons/title";
+import Cross             from "../../Components/Icons/cross";
+
+import { useLang }           from "../../contexts/LangContext";
+import { useProjects }       from "../../hooks/usePortfolioData";
+import { useEducation }      from "../../hooks/usePortfolioData";
+import { imageMap }          from "../../utils/imageMap";
+
+import pp    from "../../img/pp.jpg";
+import cv    from "../../img/cv.PNG";
 import cvPDF from "../../files/cv.pdf";
-import StudyCard from "../../Components/Commons/StudyCard";
 
 Modal.setAppElement("#root");
 
 function Home() {
+  const { lang, t }    = useLang();
+  const { data: projects }  = useProjects();
+  const { data: education } = useEducation();
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
-
-  const texts = [
-    "Développeur Full Stack 💻",
-    "Alternant chez Moovijob 😍",
-    "Ancien alternant chez CHAUSSEA 👟",
-    "Futur Ingénieur I.A 🤖",
-    "En train de dormir 😴",
-    "Error 404 [Human not found]",
-    "Plus fort que toi sur PixelWar 🖼️",
-  ];
-  const anansi = ["GoLang"];
-  const justyapping = ["HTML", "CSS", "JS"];
-  const pixelTags = ["HTML", "CSS", "JS", "NodeJS"];
-  const judgeTags = ["HTML", "CSS", "JS", "BunJS", "ReactJS"];
-  const bastionTags = [
-    "HTML",
-    "CSS",
-    "JS",
-    "PYTHON",
-    "ReactJS",
-    "NodeJS",
-    "RASPBERRY",
-  ];
-  const coiffeurTags = ["HTML", "CSS", "JS", "ReactJS", "NodeJS"];
-  const clapinTags = ["HTML", "CSS", "JS", "ReactJS", "NodeJS"];
-  const rachTags = ["HTML", "CSS", "JS", "JQuery", "PHP", "SQL"];
-  const cabaneTags = ["HTML", "CSS", "JS", "JQuery", "PHP", "SQL"];
-  const nycevTags = [
-    "HTML",
-    "CSS",
-    "JS",
-    "PYTHON",
-    "JQuery",
-    "PHP",
-    "SQL",
-    "RASPBERRY",
-    "CPLUS",
-    "ARDUINO",
-  ];
-  const streamBattle = ["CSHARP"];
-
+  // ── Drag-scroll pour la barre de compétences ──────────────────────
   const scrollContainer = useRef(null);
   let isDown = false;
-  let startX;
-  let scrollLeft;
+  let startX, scrollLeft;
 
   const handleMouseDown = (e) => {
     isDown = true;
     scrollContainer.current.classList.add("active");
-    startX = e.pageX - scrollContainer.current.offsetLeft;
+    startX     = e.pageX - scrollContainer.current.offsetLeft;
     scrollLeft = scrollContainer.current.scrollLeft;
   };
-
   const handleMouseLeave = () => {
     isDown = false;
     scrollContainer.current.classList.remove("active");
   };
-
   const handleMouseUp = () => {
     isDown = false;
     scrollContainer.current.classList.remove("active");
   };
-
   const handleMouseMove = (e) => {
     if (!isDown) return;
     e.preventDefault();
-    const x = e.pageX - scrollContainer.current.offsetLeft;
+    const x  = e.pageX - scrollContainer.current.offsetLeft;
     const walk = (x - startX) * 3;
     scrollContainer.current.scrollLeft = scrollLeft - walk;
   };
@@ -117,310 +62,174 @@ function Home() {
     <div>
       <NavBar />
       <div className="flex flex-col z-0">
-        <div id="contact" class="text-center py-10 sm:py-28 w-screen">
-          <h1 class="text-6xl font-bold text-sky-950">
-            Étudiant Mastère Architecture Logicielle et Ingénierie Informatique
+
+        {/* ── HERO ─────────────────────────────────────────────────── */}
+        <div id="contact" className="text-center py-10 sm:py-28 w-screen">
+          <h1 className="text-6xl font-bold text-sky-950 px-4">
+            {t.hero.title}
           </h1>
-          <h2 class="mt-6 font-extralight text-xl text-gray-400">
-            Venez découvrir qui je suis à travers ce portfolio🌱
+          <h2 className="mt-6 font-extralight text-xl text-gray-400">
+            {t.hero.subtitle}
           </h2>
-          <div class="mt-10 flex flex-col items-center justify-center gap-x-6">
-            <a
-              onClick={openModal}
-              class="rounded-md cursor-pointer flex bg-[#675fd3] hover:bg-[#8780f180] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
+
+          <div className="mt-10 flex flex-col items-center justify-center gap-x-6">
+            {/* Bouton CV */}
+            <button
+              onClick={() => setModalIsOpen(true)}
+              className="rounded-md cursor-pointer flex gap-2 bg-[#675fd3] hover:bg-[#8780f180] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors duration-200"
             >
               <FileIcon size="20" stroke={1.5} />
-              Retrouver mon CV
-            </a>
+              {t.hero.cv}
+            </button>
+
+            {/* Modal CV */}
             <Modal
               isOpen={modalIsOpen}
-              onRequestClose={closeModal}
+              onRequestClose={() => setModalIsOpen(false)}
               contentLabel="PDF Modal"
               style={{
-                overlay: {
-                  backgroundColor: "rgba(0, 0, 0, 0.8)", // Fond noir avec opacité de 0.8
-                },
+                overlay: { backgroundColor: "rgba(0,0,0,0.8)" },
                 content: {
-                  top: "55%",
-                  left: "50%",
-                  right: "auto",
-                  bottom: "auto",
+                  top: "55%", left: "50%", right: "auto", bottom: "auto",
                   marginRight: "-50%",
-                  transform: "translate(-50%, -50%)",
-                  width: "35%",
-                  height: "80%",
+                  transform: "translate(-50%,-50%)",
+                  width: "35%", height: "80%",
                 },
               }}
             >
-              <div class="flex flex-row justify-between">
-                <h1 class="text-2xl font-bold">PDF CV Viewer</h1>
+              <div className="flex flex-row justify-between mb-2">
+                <h1 className="text-2xl font-bold">{t.hero.cvViewer}</h1>
                 <a
                   href={cvPDF}
                   download
-                  class="rounded-md h-fit flex bg-[#675fd3] hover:bg-[#8780f180] mb-5 px-2.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
+                  className="rounded-md h-fit flex gap-1 bg-[#675fd3] hover:bg-[#8780f180] px-2.5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors"
                 >
                   <FileIcon size="20" stroke={1.5} />
-                  Telecharger mon CV
+                  {t.hero.cvDownload}
                 </a>
                 <button
-                  class="rounded-md flex bg-[#675fd3] h-fit hover:bg-[#8780f180] mb-5 px-1.5 py-1.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
-                  onClick={closeModal}
+                  onClick={() => setModalIsOpen(false)}
+                  className="rounded-md flex bg-[#675fd3] h-fit hover:bg-[#8780f180] px-1.5 py-1.5 text-sm font-semibold text-white shadow-sm transition-colors"
                 >
                   <Cross size="20" stroke={1.5} />
                 </button>
               </div>
               <iframe src={cv} width="100%" height="90%" title="PDF Viewer" />
             </Modal>
+
+            {/* Liens sociaux */}
             <div className="flex flex-row mt-10 space-x-10">
               <a
                 href="https://github.com/Atlasentinel"
                 target="_blank"
                 rel="noreferrer"
-                class="rounded-full flex bg-[#5fb6d3] gap-x-2 space-x-10 hover:bg-[#2ba8d172] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
+                className="rounded-full flex gap-2 bg-[#5fb6d3] hover:bg-[#2ba8d172] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors duration-200"
               >
                 <GitHubIcon size="20" stroke={1.5} />
-                GitHub
+                {t.hero.github}
               </a>
               <a
                 href="mailto:noeziadi@outlook.com"
-                class="flex rounded-full bg-[#d3825f] gap-x-2 hover:bg-[#d25e2c7d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
+                className="flex rounded-full gap-2 bg-[#d3825f] hover:bg-[#d25e2c7d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors duration-200"
               >
                 <EmailIcon size="20" stroke={1.5} />
-                Me contacter
+                {t.hero.contact}
               </a>
             </div>
           </div>
         </div>
-        <div
-          id="a-propos-de-moi"
-          class="text-center py-10 sm:py-12 w-screen z-5"
-        >
+
+        {/* ── À PROPOS ─────────────────────────────────────────────── */}
+        <div id="a-propos-de-moi" className="text-center py-10 sm:py-12 w-screen">
           <div className="flex flex-col md:flex-row">
-            <div className="flex place-content-center mx-auto max-w-3xl py-10 sm:py-10 particles-line w-screen">
+            {/* Photo */}
+            <div className="flex place-content-center mx-auto max-w-3xl py-10 particles-line w-screen">
               <img
                 className="h-52 shadow-2xl shadow-black w-96 object-cover rounded-xl"
-                alt="Image de Noé Ziadi"
+                alt="Noé Ziadi"
                 src={pp}
               />
             </div>
-            <div className="flex flex-col h-fit rounded-lg place-content-center mx-auto max-w-3xl py-10 sm:py-10 particles-line w-screen">
+
+            {/* Texte */}
+            <div className="flex flex-col h-fit rounded-lg place-content-center mx-auto max-w-3xl py-10 particles-line w-screen">
               <div className="flex mb-4">
-                <Title title=" À propos de moi !" />
+                <Title title={t.about.title} />
                 🍃
               </div>
-              <p class="font-bold text-left  max-w-xl text-sky-950 ml-2">
-                Je suis:{" "}
-                <TypingAnimation texts={texts} speed={100} pauseTime={100} />|
+              <p className="font-bold text-left max-w-xl text-sky-950 ml-2">
+                {t.about.iam}{" "}
+                <TypingAnimation texts={t.about.texts} speed={100} pauseTime={100} />
+                |
               </p>
-              <p class="font-extralight  text-left  max-w-xl text-sky-950 ml-2">
-                Jeune pirate informatique de 23 ans 🏴‍☠️, je navigue sur les mers
-                de la programmation avec envie et passion à la recherche du
-                trésor de la connaissance ⛵.
+              <p className="font-extralight text-left max-w-xl text-sky-950 ml-2">
+                {t.about.bio}
                 <br />
                 <i>
-                  "Le fruit de nos echecs est le composte de notre réussite" -
-                  2019
+                  {t.about.quote}
                   <br />
-                  <strong>Ziadi Noé 🍂</strong>
+                  <strong>{t.about.author}</strong>
                 </i>
               </p>
               <br />
-              <p class="font-semibold  text-left  max-w-xl text-[#8780f1] ml-2">
+              <p className="font-semibold text-left max-w-xl text-[#8780f1] ml-2">
                 <a
                   href="https://fr.linkedin.com/in/noé-ziadi-770255211/fr"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {" "}
-                  Retrouvez moi sur Linkedin →
+                  {t.about.linkedin}
                 </a>
               </p>
             </div>
           </div>
         </div>
-        <div
-          id="mes-projets"
-          className="text-center py-10 sm:py-12 w-screen bg-gray-100 z-5"
-        >
-          <Title title="Mes projets !" />
+
+        {/* ── PROJETS ──────────────────────────────────────────────── */}
+        <div id="mes-projets" className="text-center py-10 sm:py-12 w-screen bg-gray-100">
+          <Title title={t.projects.title} />
           <div className="flex flex-row items-center">
             <div className="flex flex-wrap justify-center">
-              <ProjectCard
-                link="Anansi"
-                array={anansi}
-                title="Anansi"
-                description="Logiciel de partage de journaux en p2p"
-                date_start="Février 2026"
-                img={projectAnansi}
-              />
-              <ProjectCard
-                link="ekea"
-                array={pixelTags}
-                title="Ekea"
-                description="Mini-jeux multijoueur autour des produits Ikea"
-                date_start="Janvier 2026"
-                date_end="Février 2026"
-                img={projectEkea}
-              />
-              <ProjectCard
-                link="justyapping"
-                array={justyapping}
-                title="JustYapping"
-                description="Générateur de tchat Twitch/Kick"
-                date_start="Janvier 2026"
-                date_end="Janvier 2026"
-                img={projectJustYapping}
-              />
-              <ProjectCard
-                link="stattrak"
-                array={pixelTags}
-                title="Stattrak"
-                description="Analyseur de CV par I.A"
-                date_start="Novembre 2025"
-                date_end="Décembre 2025"
-                img={projectStattrak}
-              />
-              <ProjectCard
-                link="roger"
-                array={pixelTags}
-                title="R0ger"
-                description="Service de partage de document sécurisé E2E 0-Trust"
-                date_start="Novembre 2026"
-                img={projectRoger}
-              />
-              <ProjectCard
-                link="pixelwar"
-                array={pixelTags}
-                title="PixelWar"
-                description="Canva de dessin collaboratif en temps réel"
-                date_start="Mai 2025"
-                img={pixelwar}
-              />
-              <ProjectCard
-                available="false"
-                array={judgeTags}
-                title="Judge"
-                description="API de filtrage pour les évènements"
-                date_start="Décembre 2024"
-                img={judge}
-              />
-              <ProjectCard
-                link="bastion"
-                array={bastionTags}
-                title="Bastion"
-                description="Projet de sécurité des accès d'un lieu physique."
-                date_start="Octobre 2023"
-                date_end="Octobre 2024"
-                img={projectBastion}
-              />
-              <ProjectCard
-                link="coiffeur"
-                array={coiffeurTags}
-                title="Coiffeur"
-                description="WebApp de prise de rendez-vous pour coiffeurs particuliers."
-                date_start="Mars 2024"
-                img={projectCoiffeur}
-              />
-              <ProjectCard
-                available="false"
-                array={clapinTags}
-                title="Clapin"
-                description="Site web de streaming de film pour studio indépendant."
-                date_start="Février 2024"
-                img={projetClapin}
-              />
-              <ProjectCard
-                link="rach"
-                array={rachTags}
-                title="RACH"
-                description="Catalogue de paires de chaussures"
-                date_start="Janvier 2023"
-                date_end="Février 2023"
-                img={projectRach}
-              />
-              <ProjectCard
-                link="creche"
-                array={cabaneTags}
-                title="La Cabane des lutins"
-                description="WebApp de gestion de micro-crèches"
-                date_start="Mai 2022"
-                date_end="Juin 2022"
-                img={projectCreche}
-              />
-              <ProjectCard
-                link="stream-battle"
-                array={streamBattle}
-                title="StreamBattle"
-                description="Jeu intéractive connecté à l'API Twitch pour jouer avec le chat"
-                date_start="Janvier 2021"
-                date_end="Janvier 2021"
-                img={projectStreamBattle}
-              />
-              <ProjectCard
-                link="nycev"
-                array={nycevTags}
-                title="NYCEV"
-                description="Robot Agriculteur autonome"
-                date_start="Mars 2020"
-                img={projectNycev}
-              />
+              {projects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  link={project.slug || undefined}
+                  array={project.tags}
+                  title={project.title}
+                  description={project.description[lang]}
+                  date_start={project.date_start[lang]}
+                  date_end={project.date_end ? project.date_end[lang] : null}
+                  img={imageMap[project.image]}
+                  available={project.available}
+                />
+              ))}
             </div>
           </div>
         </div>
 
-        <div
-          id="formations"
-          className="text-center py-10 sm:py-12 w-screen bg-white z-5"
-        >
-          <Title title="Formations !" />
+        {/* ── FORMATIONS ───────────────────────────────────────────── */}
+        <div id="formations" className="text-center py-10 sm:py-12 w-screen bg-white">
+          <Title title={t.education.title} />
           <div className="flex flex-row items-center">
             <div className="flex flex-wrap justify-center">
-              <StudyCard
-                title="Bac STI2D"
-                description="Sciences et Technologies de l'Industrie et du Développement Durable"
-                option="Systèmes d'Informations et Numérique"
-                city="Metz"
-                date_start="2018 -> 2020"
-                school="Lycée de la Communication"
-              />
-              <StudyCard
-                title="DUT Informatique"
-                description="Diplôme Universitaire d'Informatique de Lorraine"
-                option="Informatique"
-                city="Metz"
-                date_start="2021[❌]"
-                school="Université de Lorraine"
-              />
-              <StudyCard
-                title="BTS SIO"
-                description="Services Informatiques aux Organisations"
-                option="Solutions Logiciels et Application Metier"
-                city="Metz"
-                date_start="2021 -> 2023"
-                school="Lycée Technologique Robert Schuman"
-              />
-              <StudyCard
-                title="Bachelor DFS"
-                description="Centre de formation en Alternance"
-                option="Développeur Full Stack"
-                city="Metz"
-                date_start="2023 -> 2024"
-                school="Metz Numeric School"
-              />
-              <StudyCard
-                title="Mastère M2I"
-                description="Centre de formation en Alternance"
-                option="Management et Ingénieurie Informatique"
-                city="Metz"
-                date_start="2024 -> 2026"
-                school="Metz Numeric School"
-              />
+              {education.map((edu) => (
+                <StudyCard
+                  key={edu.id}
+                  title={edu.title}
+                  description={edu.description[lang]}
+                  option={edu.option[lang]}
+                  city={edu.city}
+                  date_start={edu.period}
+                  school={edu.school}
+                />
+              ))}
             </div>
           </div>
         </div>
 
-        <div class="text-center py-10 sm:py-12 w-screen bg-white z-5">
-          <Title title="Mes compétences techniques !" />
+        {/* ── COMPÉTENCES ──────────────────────────────────────────── */}
+        <div className="text-center py-10 sm:py-12 w-screen bg-white">
+          <Title title={t.skills.title} />
           <div className="w-screen">
             <div
               ref={scrollContainer}
@@ -430,24 +239,21 @@ function Home() {
               onMouseMove={handleMouseMove}
               className="flex justify-center p-4 pl-6 select-none space-x-4 overflow-x-auto overflow-y-hidden w-full h-40 cursor-grab active:cursor-grabbing scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200"
             >
-              {/* Le front */}
+              {/* Frontend */}
               <ImgSkills link="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx7zQzheKgsaUJVceUY7qh1BQ8ALn-LwHM9_91-Mbvsg&s" />
               <ImgSkills link="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png" />
               <ImgSkills link="https://seeklogo.com/images/J/javascript-logo-E967E87D74-seeklogo.com.png" />
               <ImgSkills link="https://3.imimg.com/data3/TK/CW/MY-6654490/jquery-250x250.jpg" />
               <ImgSkills link="https://cdn-icons-png.flaticon.com/512/1183/1183621.png" />
-
-              {/* Le web dynamique */}
+              {/* Web dynamique */}
               <ImgSkills link="https://pngimg.com/d/php_PNG45.png" />
               <ImgSkills link="https://cdn.icon-icons.com/icons2/2389/PNG/512/symfony_logo_icon_144821.png" />
               <ImgSkills link="https://cdn-icons-png.flaticon.com/512/3161/3161133.png" />
-
-              {/* Les langages haut niveau */}
+              {/* Langages */}
               <ImgSkills link="https://cdn.icon-icons.com/icons2/2415/PNG/512/csharp_plain_logo_icon_146577.png" />
               <ImgSkills link="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/1024px-Python.svg.png" />
               <ImgSkills link="https://cdn-icons-png.flaticon.com/512/1183/1183618.png" />
-
-              {/* Les logiciels */}
+              {/* Outils */}
               <ImgSkills link="https://seeklogo.com/images/U/unity-logo-988A22E703-seeklogo.com.png" />
               <ImgSkills link="https://www.docker.com/wp-content/uploads/2023/05/symbol_blue-docker-logo.png" />
               <ImgSkills link="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2048px-Git_icon.svg.png" />
@@ -459,6 +265,7 @@ function Home() {
             </div>
           </div>
         </div>
+
         <Footer />
       </div>
     </div>

@@ -1,23 +1,41 @@
+/**
+ * Carte formation modernisée.
+ * Garde la D.A existante (couleurs emoji, fond blanc, bordure noire).
+ * Améliorations : accent gradient, lift au survol, meilleur espacement.
+ */
 function StudyCard({ title, description, option, city, date_start, school }) {
-    return (
-        <div className="flex flex-col m-5 border-2 border-black hover:scale-110 cursor-pointer transition-all delay-150 bg-white text-black w-80 h-100 rounded-3xl mb-10">
-            <div className="rounded-lg w-100">
-                <div className="flex flex-col p-4 py-4 ">
-                    <h1 className="text-2xl font-semibold m-2">{title}</h1>
-                    <hr className="wit-full" />
-                    <div className="h-[4rem]">
-                        <span className="flex text-wrap mt-4 font-semibold">{description}</span>
-                    </div>
-                </div>
-                <div className="flex flex-col p-2 mb-2 pl-4 gap-2">
-                    <span className="flex flex-row text-sm text-gray-400 font-bold">⚙&nbsp; {option}</span>
-                    <span className="flex flex-row text-sm text-blue-400 font-medium">📍 &nbsp; {city}</span>
-                    <span className="flex flex-row text-sm text-pink-400 font-bold">👨‍🎓&nbsp; {date_start}</span>
-                    <span className="flex flex-row text-sm text-purple-600 font-semibold">🏫 {school}</span>
-                </div>
-            </div>
+  return (
+    <div className="group flex flex-col m-4 bg-white w-80 rounded-2xl border-2 border-black hover:border-[#675fd3] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer">
+
+      {/* Ligne accent gradient */}
+      <div className="h-1 bg-gradient-to-r from-[#675fd3] to-[#5fb6d3] transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
+
+      <div className="p-5 flex flex-col gap-3">
+        {/* Titre */}
+        <h2 className="text-2xl font-semibold text-sky-950">{title}</h2>
+        <hr className="border-gray-200" />
+
+        {/* Description */}
+        <p className="text-sm font-semibold text-gray-700 min-h-[2.5rem]">{description}</p>
+
+        {/* Métadonnées */}
+        <div className="flex flex-col gap-1.5 mt-1">
+          <span className="flex items-center gap-2 text-sm text-gray-500">
+            ⚙️ <span className="font-medium text-gray-700">{option}</span>
+          </span>
+          <span className="flex items-center gap-2 text-sm text-blue-400 font-medium">
+            📍 {city}
+          </span>
+          <span className="flex items-center gap-2 text-sm text-pink-400 font-bold">
+            👨‍🎓 {date_start}
+          </span>
+          <span className="flex items-center gap-2 text-sm text-purple-600 font-semibold">
+            🏫 {school}
+          </span>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default StudyCard;

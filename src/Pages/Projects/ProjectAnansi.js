@@ -1,0 +1,57 @@
+import TagTechno      from "../../Components/Commons/TagTechno";
+import Footer         from "../../Components/footer";
+import anansi_banner  from "../../img/anansi_banner.jpg";
+import anansi_banner1 from "../../img/anansi_banner1.jpg";
+import anansi_banner2 from "../../img/anansi_banner2.jpg";
+import NavBar         from "../../Components/navbar";
+
+function projectAnansi() {
+  const anansi = ["GoLang"];
+  return (
+    <div>
+      <NavBar />
+      <div className="flex flex-col z-0 w-fit">
+        <div className="rounded-lg w-screen">
+          <img className="w-full h-80 object-cover" src={anansi_banner} alt="Anansi banner" />
+          <div className="flex flex-row justify-center text-wrap w-screen mt-6">
+            <div className="flex flex-col justify-center align-center space-y-5">
+              <h1 className="flex justify-center font-bold text-4xl">Anansi🕸️</h1>
+              <div className="flex justify-center w-64">
+                <TagTechno array={anansi} />
+              </div>
+            </div>
+          </div>
+
+          <div className="flex justify-center relative w-full mt-4">
+            <div className="flex flex-col justify-center rounded-lg font-semibold">
+              <span className="flex justify-center rounded-md p-1 font-thin bg-blue-300 text-white mb-4">[ Perso ]</span>
+              <span>📍 &nbsp;&nbsp;: Metz</span>
+              <span>👾 : Site Web</span>
+              <span>🌐 : Anansi <span className="text-yellow-300">(pas encore dispo)</span></span>
+              <span>📅 : Février 2025</span>
+            </div>
+          </div>
+
+          <div className="flex justify-center flex-row relative w-full mt-5 p-10">
+            <div className="flex justify-between w-[50rem] bg-gray-100 p-4 rounded-lg">
+              <p className="text-justify space-y-5">
+                <p className="flex justify-center font-semibold">Anansi🕸️</p>
+                <p>Anansi est un projet de partage d'informations pour les journalistes d'investigation et de guerre. Le projet a pour but de lutter contre la censure et la répression de certains régimes politiques.</p>
+                <p>Il se base sur la communication en pair à pair et le chiffrement de bout en bout pour permettre aux journalistes de partager des informations sensibles en toute sécurité. Il a été développé en GoLang pour sa performance et sa simplicité, ainsi que pour sa capacité à gérer les connexions réseau de manière efficace.</p>
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap justify-around gap-5 mt-6 p-4">
+            <img className="rounded-lg border w-[20rem] h-[12rem] object-cover hover:scale-125 cursor-pointer transition-all delay-150" src={anansi_banner} alt="" />
+            <img className="rounded-lg border w-[20rem] h-[12rem] object-cover hover:scale-125 cursor-pointer transition-all delay-150" src={anansi_banner2} alt="" />
+            <img className="rounded-lg border w-[20rem] h-[12rem] object-cover hover:scale-125 cursor-pointer transition-all delay-150" src={anansi_banner1} alt="" />
+          </div>
+        </div>
+        <Footer />
+      </div>
+    </div>
+  );
+}
+
+export default projectAnansi;

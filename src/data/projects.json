@@ -1,0 +1,354 @@
+[
+  {
+    "id": "anansi",
+    "slug": "anansi",
+    "title": "Anansi",
+    "description": {
+      "fr": "Logiciel de partage de journaux en p2p",
+      "en": "P2P log-sharing software"
+    },
+    "tags": [
+      "GoLang"
+    ],
+    "date_start": {
+      "fr": "Février 2026",
+      "en": "February 2026"
+    },
+    "date_end": null,
+    "available": true,
+    "image": "anansi_banner.jpg",
+    "type": "Perso"
+  },
+  {
+    "id": "ekea",
+    "slug": "ekea",
+    "title": "Ekea",
+    "description": {
+      "fr": "Mini-jeux multijoueur autour des produits Ikea",
+      "en": "Free multiplayer mini-games inspired by IKEA products"
+    },
+    "tags": [
+      "HTML",
+      "CSS",
+      "JS",
+      "NodeJS"
+    ],
+    "date_start": {
+      "fr": "Janvier 2026",
+      "en": "January 2026"
+    },
+    "date_end": {
+      "fr": "Février 2026",
+      "en": "February 2026"
+    },
+    "available": true,
+    "image": "ekea_banner.jpg",
+    "type": "Perso"
+  },
+  {
+    "id": "justyapping",
+    "slug": "justyapping",
+    "title": "JustYapping",
+    "description": {
+      "fr": "Générateur de tchat Twitch/Kick",
+      "en": "Twitch & Kick chat screenshot generator"
+    },
+    "tags": [
+      "HTML",
+      "CSS",
+      "JS"
+    ],
+    "date_start": {
+      "fr": "Janvier 2026",
+      "en": "January 2026"
+    },
+    "date_end": {
+      "fr": "Janvier 2026",
+      "en": "January 2026"
+    },
+    "available": true,
+    "image": "justyapping_banner.jpg",
+    "type": "Perso"
+  },
+  {
+    "id": "stattrak",
+    "slug": "stattrak",
+    "title": "Stattrak",
+    "description": {
+      "fr": "Analyseur de CV par I.A",
+      "en": "AI-powered resume analyzer"
+    },
+    "tags": [
+      "HTML",
+      "CSS",
+      "JS",
+      "NodeJS"
+    ],
+    "date_start": {
+      "fr": "Novembre 2025",
+      "en": "November 2025"
+    },
+    "date_end": {
+      "fr": "Décembre 2025",
+      "en": "December 2025"
+    },
+    "available": true,
+    "image": "stattrak-banner.jpg",
+    "type": "Perso"
+  },
+  {
+    "id": "roger",
+    "slug": "roger",
+    "title": "R0ger",
+    "description": {
+      "fr": "Service de partage de document sécurisé E2E 0-Trust",
+      "en": "Zero-trust end-to-end encrypted file sharing service"
+    },
+    "tags": [
+      "HTML",
+      "CSS",
+      "JS",
+      "NodeJS"
+    ],
+    "date_start": {
+      "fr": "Novembre 2026",
+      "en": "November 2026"
+    },
+    "date_end": null,
+    "available": true,
+    "image": "r0ger_banner.jpg",
+    "type": "Perso"
+  },
+  {
+    "id": "pixelwar",
+    "slug": "pixelwar",
+    "title": "PixelWar",
+    "description": {
+      "fr": "Canva de dessin collaboratif en temps réel",
+      "en": "Collaborative real-time pixel drawing canvas"
+    },
+    "tags": [
+      "HTML",
+      "CSS",
+      "JS",
+      "NodeJS"
+    ],
+    "date_start": {
+      "fr": "Mai 2025",
+      "en": "May 2025"
+    },
+    "date_end": null,
+    "available": true,
+    "image": "pixelwar.PNG",
+    "type": "Perso"
+  },
+  {
+    "id": "judge",
+    "slug": null,
+    "title": "Judge",
+    "description": {
+      "fr": "API de filtrage pour les évènements",
+      "en": "Event filtering API"
+    },
+    "tags": [
+      "HTML",
+      "CSS",
+      "JS",
+      "BunJS",
+      "ReactJS"
+    ],
+    "date_start": {
+      "fr": "Décembre 2024",
+      "en": "December 2024"
+    },
+    "date_end": null,
+    "available": false,
+    "image": "judge.png",
+    "type": "Perso"
+  },
+  {
+    "id": "bastion",
+    "slug": "bastion",
+    "title": "Bastion",
+    "description": {
+      "fr": "Projet de sécurité des accès d'un lieu physique.",
+      "en": "Physical access management security project"
+    },
+    "tags": [
+      "HTML",
+      "CSS",
+      "JS",
+      "PYTHON",
+      "ReactJS",
+      "NodeJS",
+      "RASPBERRY"
+    ],
+    "date_start": {
+      "fr": "Octobre 2023",
+      "en": "October 2023"
+    },
+    "date_end": {
+      "fr": "Octobre 2024",
+      "en": "October 2024"
+    },
+    "available": true,
+    "image": "projet-bastion.PNG",
+    "type": "Bac+3 D.F.S"
+  },
+  {
+    "id": "coiffeur",
+    "slug": "coiffeur",
+    "title": "Coiffeur",
+    "description": {
+      "fr": "WebApp de prise de rendez-vous pour coiffeurs particuliers.",
+      "en": "Appointment booking webapp for independent hairdressers"
+    },
+    "tags": [
+      "HTML",
+      "CSS",
+      "JS",
+      "ReactJS",
+      "NodeJS"
+    ],
+    "date_start": {
+      "fr": "Mars 2024",
+      "en": "March 2024"
+    },
+    "date_end": null,
+    "available": true,
+    "image": "projet-coiffeur.jpeg",
+    "type": "Perso"
+  },
+  {
+    "id": "clapin",
+    "slug": null,
+    "title": "Clapin",
+    "description": {
+      "fr": "Site web de streaming de film pour studio indépendant.",
+      "en": "Streaming website for an independent film studio"
+    },
+    "tags": [
+      "HTML",
+      "CSS",
+      "JS",
+      "ReactJS",
+      "NodeJS"
+    ],
+    "date_start": {
+      "fr": "Février 2024",
+      "en": "February 2024"
+    },
+    "date_end": null,
+    "available": false,
+    "image": "projet-clapin.PNG",
+    "type": "Perso"
+  },
+  {
+    "id": "rach",
+    "slug": "rach",
+    "title": "RACH",
+    "description": {
+      "fr": "Catalogue de paires de chaussures",
+      "en": "Sneaker store e-catalog"
+    },
+    "tags": [
+      "HTML",
+      "CSS",
+      "JS",
+      "JQuery",
+      "PHP",
+      "SQL"
+    ],
+    "date_start": {
+      "fr": "Janvier 2023",
+      "en": "January 2023"
+    },
+    "date_end": {
+      "fr": "Février 2023",
+      "en": "February 2023"
+    },
+    "available": true,
+    "image": "projet-rach.jfif",
+    "type": "Stage"
+  },
+  {
+    "id": "creche",
+    "slug": "creche",
+    "title": "La Cabane des lutins",
+    "description": {
+      "fr": "WebApp de gestion de micro-crèches",
+      "en": "Micro-nursery management webapp"
+    },
+    "tags": [
+      "HTML",
+      "CSS",
+      "JS",
+      "JQuery",
+      "PHP",
+      "SQL"
+    ],
+    "date_start": {
+      "fr": "Mai 2022",
+      "en": "May 2022"
+    },
+    "date_end": {
+      "fr": "Juin 2022",
+      "en": "June 2022"
+    },
+    "available": true,
+    "image": "projet-creche.jpg",
+    "type": "Stage"
+  },
+  {
+    "id": "stream-battle",
+    "slug": "stream-battle",
+    "title": "StreamBattle",
+    "description": {
+      "fr": "Jeu intéractif connecté à l'API Twitch pour jouer avec le chat",
+      "en": "Interactive game connected to the Twitch API to play with the chat"
+    },
+    "tags": [
+      "CSHARP"
+    ],
+    "date_start": {
+      "fr": "Janvier 2021",
+      "en": "January 2021"
+    },
+    "date_end": {
+      "fr": "Janvier 2021",
+      "en": "January 2021"
+    },
+    "available": true,
+    "image": "projet-streamBattle.png",
+    "type": "Perso"
+  },
+  {
+    "id": "nycev",
+    "slug": "nycev",
+    "title": "NYCEV",
+    "description": {
+      "fr": "Robot Agriculteur autonome",
+      "en": "Autonomous agricultural robot"
+    },
+    "tags": [
+      "HTML",
+      "CSS",
+      "JS",
+      "PYTHON",
+      "JQuery",
+      "PHP",
+      "SQL",
+      "RASPBERRY",
+      "CPLUS",
+      "ARDUINO"
+    ],
+    "date_start": {
+      "fr": "Mars 2020",
+      "en": "March 2020"
+    },
+    "date_end": null,
+    "available": true,
+    "image": "projet-nycev.PNG",
+    "type": "Bac STI2D"
+  }
+]
