@@ -1,354 +1,599 @@
 [
   {
-    "id": "anansi",
-    "slug": "anansi",
-    "title": "Anansi",
-    "description": {
-      "fr": "Logiciel de partage de journaux en p2p",
-      "en": "P2P log-sharing software"
-    },
-    "tags": [
-      "GoLang"
-    ],
-    "date_start": {
-      "fr": "Février 2026",
-      "en": "February 2026"
-    },
+    "id": "brokerbar",
+    "slug": "brokerbar",
+    "title": "BrokerBar",
+    "featured": true,
+    "kind": "perso",
+    "status": "wip",
+    "date_start": "2026-09",
     "date_end": null,
-    "available": true,
-    "image": "anansi_banner.jpg",
-    "type": "Perso"
+    "tags": [
+      "TypeScript",
+      "NestJS",
+      "React",
+      "PostgreSQL",
+      "Redis",
+      "Socket.IO"
+    ],
+    "summary": {
+      "fr": "La bourse de la boisson : les prix d’un bar varient en direct selon les commandes, comme sur un marché.",
+      "en": "A stock exchange for drinks: a bar’s prices move live with orders, just like a market."
+    },
+    "body": {
+      "fr": [
+        "BrokerBar se connecte à la caisse existante d’un bar pour faire varier les prix des boissons comme sur un marché boursier : plus un produit est commandé, plus son cours monte ; si personne n’en veut, il redescend jusqu’à un plancher.",
+        "Le bar n’a pas à changer de caisse. Le gérant garde la main sur tout (plancher, plafond, sensibilité, krachs) et peut arrêter la bourse à tout moment pour revenir aux prix d’origine."
+      ],
+      "en": [
+        "BrokerBar plugs into a bar’s existing till and makes drink prices move like a stock market: the more a product is ordered, the higher its price goes; if nobody wants it, it drops down to a floor.",
+        "The bar keeps its till. The manager stays in control of everything (floor, ceiling, sensitivity, crashes) and can stop the market at any time to restore the original prices."
+      ]
+    },
+    "highlights": {
+      "fr": [
+        "Branchement sur la caisse du bar via des adaptateurs (architecture hexagonale), avec import automatique du catalogue.",
+        "Écran TV en temps réel : ticker des cours, krachs animés et mini-jeu d’arcade « Le 1 km ».",
+        "Site public de présentation avec demande de démo.",
+        "Back-office gérant (prix plancher et plafond, coût d’achat, rôles) et back-office propriétaire multi-bars (chiffre d’affaires, facturation).",
+        "Monorepo TypeScript : API NestJS et Socket.IO, PostgreSQL avec Prisma, Redis, fronts React et Vite.",
+        "Développement piloté par les tests (Vitest), CI GitHub Actions."
+      ],
+      "en": [
+        "Connects to the bar’s till through adapters (hexagonal architecture), with automatic catalogue import.",
+        "Real-time TV screen: price ticker, animated crashes and the “1 km” arcade mini-game.",
+        "Public marketing website with demo requests.",
+        "Manager back office (floor and ceiling prices, purchase cost, roles) and a multi-bar owner back office (revenue, billing).",
+        "TypeScript monorepo: NestJS and Socket.IO API, PostgreSQL with Prisma, Redis, React and Vite front ends.",
+        "Test-driven development (Vitest), GitHub Actions CI."
+      ]
+    },
+    "links": {},
+    "cover": "brokerbar-logo.webp",
+    "gallery": [
+      "brokerbar-ecran.webp",
+      "brokerbar-site.webp"
+    ]
   },
   {
-    "id": "ekea",
-    "slug": "ekea",
-    "title": "Ekea",
-    "description": {
-      "fr": "Mini-jeux multijoueur autour des produits Ikea",
-      "en": "Free multiplayer mini-games inspired by IKEA products"
-    },
+    "id": "uspot",
+    "slug": "uspot",
+    "title": "Uspot",
+    "featured": true,
+    "kind": "perso",
+    "status": "live",
+    "date_start": "2026-09",
+    "date_end": null,
     "tags": [
-      "HTML",
-      "CSS",
-      "JS",
-      "NodeJS"
+      "Next.js",
+      "React",
+      "MapLibre"
     ],
-    "date_start": {
-      "fr": "Janvier 2026",
-      "en": "January 2026"
+    "summary": {
+      "fr": "Plateforme collaborative pour signaler une disparition et aider à retrouver un proche.",
+      "en": "Collaborative platform to report a missing person and help find them."
     },
-    "date_end": {
-      "fr": "Février 2026",
-      "en": "February 2026"
+    "body": {
+      "fr": [
+        "Uspot permet de signaler une disparition en quelques minutes et de mobiliser son territoire pour retrouver un proche. Chaque signalement devient une fiche publique, consultable et partageable.",
+        "Le site propose aussi un guide pratique des démarches en France (numéros d’urgence, éléments à fournir aux enquêteurs) et prend en charge les animaux perdus."
+      ],
+      "en": [
+        "Uspot lets people report a disappearance in a few minutes and rally their local area to find a loved one. Each report becomes a public, shareable page.",
+        "The site also offers a practical guide to the procedures in France (emergency numbers, information to give investigators) and handles lost pets too."
+      ]
     },
-    "available": true,
-    "image": "ekea_banner.jpg",
-    "type": "Perso"
+    "highlights": {
+      "fr": [
+        "Carte interactive des signalements (MapLibre).",
+        "Connexion avec Google pour créer et gérer ses fiches.",
+        "Statistiques en direct : personnes signalées, retrouvées et taux de résolution.",
+        "Respect de la vie privée : uniquement des cookies essentiels, aucun traceur publicitaire."
+      ],
+      "en": [
+        "Interactive map of reports (MapLibre).",
+        "Google sign-in to create and manage reports.",
+        "Live statistics: people reported, people found and resolution rate.",
+        "Privacy first: essential cookies only, no ad tracking."
+      ]
+    },
+    "links": {
+      "demo": "https://uspot.fr"
+    },
+    "cover": "uspot-1.webp",
+    "gallery": [
+      "uspot-1.webp",
+      "uspot-2.webp"
+    ]
   },
   {
-    "id": "justyapping",
-    "slug": "justyapping",
-    "title": "JustYapping",
-    "description": {
-      "fr": "Générateur de tchat Twitch/Kick",
-      "en": "Twitch & Kick chat screenshot generator"
-    },
+    "id": "saniest",
+    "slug": "saniest",
+    "title": "Saniest",
+    "featured": true,
+    "kind": "client",
+    "status": "live",
+    "date_start": "2026-06",
+    "date_end": "2026-06",
     "tags": [
-      "HTML",
-      "CSS",
-      "JS"
+      "React",
+      "Vite",
+      "Tailwind"
     ],
-    "date_start": {
-      "fr": "Janvier 2026",
-      "en": "January 2026"
+    "summary": {
+      "fr": "Site vitrine d’un pisciniste près de Metz : prestations, réalisations et demande de devis.",
+      "en": "Showcase website for a pool builder near Metz: services, past work and quote requests."
     },
-    "date_end": {
-      "fr": "Janvier 2026",
-      "en": "January 2026"
+    "body": {
+      "fr": [
+        "Site réalisé pour Saniest, pisciniste à Courcelles-sur-Nied près de Metz : construction de piscines en béton, pose de liner armé, entretien et rénovation dans toute la Lorraine.",
+        "Le site présente les prestations, une galerie de réalisations et les avis clients, avec la demande de devis gratuit mise en avant à chaque étape."
+      ],
+      "en": [
+        "Website built for Saniest, a pool builder in Courcelles-sur-Nied near Metz: concrete pool construction, reinforced liner installation, maintenance and renovation across Lorraine.",
+        "The site presents the services, a gallery of past work and customer reviews, with the free quote request highlighted at every step."
+      ]
     },
-    "available": true,
-    "image": "justyapping_banner.jpg",
-    "type": "Perso"
-  },
-  {
-    "id": "stattrak",
-    "slug": "stattrak",
-    "title": "Stattrak",
-    "description": {
-      "fr": "Analyseur de CV par I.A",
-      "en": "AI-powered resume analyzer"
+    "highlights": {
+      "fr": [
+        "Pages prestations : construction, entretien et rénovation.",
+        "Galerie de réalisations et avis clients.",
+        "Bandeau de consentement sans traceur : la carte Google Maps reste bloquée tant que le visiteur n’a pas accepté.",
+        "Développé en React avec Vite et Tailwind."
+      ],
+      "en": [
+        "Service pages: construction, maintenance and renovation.",
+        "Gallery of past work and customer reviews.",
+        "Tracker-free consent banner: the Google Maps embed stays blocked until the visitor accepts.",
+        "Built with React, Vite and Tailwind."
+      ]
     },
-    "tags": [
-      "HTML",
-      "CSS",
-      "JS",
-      "NodeJS"
-    ],
-    "date_start": {
-      "fr": "Novembre 2025",
-      "en": "November 2025"
+    "links": {
+      "demo": "https://saniest.fr"
     },
-    "date_end": {
-      "fr": "Décembre 2025",
-      "en": "December 2025"
-    },
-    "available": true,
-    "image": "stattrak-banner.jpg",
-    "type": "Perso"
+    "cover": "saniest-1.webp",
+    "gallery": [
+      "saniest-1.webp",
+      "saniest-2.webp"
+    ]
   },
   {
     "id": "roger",
     "slug": "roger",
     "title": "R0ger",
-    "description": {
-      "fr": "Service de partage de document sécurisé E2E 0-Trust",
-      "en": "Zero-trust end-to-end encrypted file sharing service"
-    },
-    "tags": [
-      "HTML",
-      "CSS",
-      "JS",
-      "NodeJS"
-    ],
-    "date_start": {
-      "fr": "Novembre 2026",
-      "en": "November 2026"
-    },
+    "featured": false,
+    "kind": "perso",
+    "status": "wip",
+    "date_start": "2025-11",
     "date_end": null,
-    "available": true,
-    "image": "r0ger_banner.jpg",
-    "type": "Perso"
+    "tags": [
+      "JavaScript",
+      "Node.js",
+      "AES-256-GCM"
+    ],
+    "summary": {
+      "fr": "Service de partage de fichiers chiffré de bout en bout, en architecture zero-trust.",
+      "en": "End-to-end encrypted file sharing service built on a zero-trust architecture."
+    },
+    "body": {
+      "fr": [
+        "Partager un fichier sensible sans faire confiance au serveur : c’est le point de départ de R0ger. L’utilisateur crée une room temporaire, y dépose ses fichiers ou dossiers, puis partage l’accès.",
+        "Le service ne stocke ni clé, ni fichier en clair : aucune rétention de données, tout est chiffré côté navigateur."
+      ],
+      "en": [
+        "Sharing a sensitive file without trusting the server: that is the starting point of R0ger. Users create a temporary room, drop files or folders into it, then share access.",
+        "The service never stores keys or unencrypted files: no data retention, everything is encrypted in the browser."
+      ]
+    },
+    "highlights": {
+      "fr": [
+        "Chiffrement AES-256-GCM côté navigateur, avec découpage des fichiers en blocs (chunks).",
+        "Rooms temporaires : créer une room ou en rejoindre une pour échanger fichiers et dossiers.",
+        "Architecture zero-trust : aucune donnée exploitable n’est conservée côté serveur."
+      ],
+      "en": [
+        "Client-side AES-256-GCM encryption, with files split into chunks.",
+        "Temporary rooms: create or join a room to exchange files and folders.",
+        "Zero-trust architecture: no usable data is kept on the server."
+      ]
+    },
+    "links": {},
+    "cover": "r0ger-banner.webp",
+    "gallery": [
+      "r0ger-banner.webp",
+      "r0ger-banner1.webp",
+      "r0ger-banner2.webp"
+    ]
+  },
+  {
+    "id": "ekea",
+    "slug": "ekea",
+    "title": "Ekea",
+    "featured": true,
+    "kind": "perso",
+    "status": "live",
+    "date_start": "2026-01",
+    "date_end": "2026-02",
+    "tags": [
+      "JavaScript",
+      "Node.js",
+      "WebSocket"
+    ],
+    "summary": {
+      "fr": "Mini-jeux multijoueur gratuits en temps réel, autour des produits Ikea.",
+      "en": "Free real-time multiplayer mini-games built around IKEA products."
+    },
+    "body": {
+      "fr": [
+        "Ekea est un site de mini-jeux en ligne, multijoueur et gratuit. Les joueurs s’affrontent en temps réel, entre amis ou avec d’autres joueurs, sur des jeux autour des produits Ikea.",
+        "Le projet respecte les principes de la Clean Architecture et s’appuie sur les WebSockets pour la synchronisation des parties."
+      ],
+      "en": [
+        "Ekea is a free online multiplayer mini-game website. Players compete in real time, with friends or strangers, in games built around IKEA products.",
+        "The project follows Clean Architecture principles and relies on WebSockets to keep games in sync."
+      ]
+    },
+    "links": {
+      "demo": "https://ekea.fun"
+    },
+    "cover": "ekea-banner.webp",
+    "gallery": [
+      "ekea-banner.webp",
+      "ekea-banner1.webp",
+      "ekea-banner2.webp"
+    ]
+  },
+  {
+    "id": "stattrak",
+    "slug": "stattrak",
+    "title": "Stattrak",
+    "featured": true,
+    "kind": "perso",
+    "status": "live",
+    "date_start": "2025-11",
+    "date_end": "2025-12",
+    "tags": [
+      "JavaScript",
+      "Node.js"
+    ],
+    "summary": {
+      "fr": "Analyse de CV par IA : axes d’amélioration et note d’efficacité sur 100.",
+      "en": "AI-powered resume analysis: improvement areas and an overall score out of 100."
+    },
+    "body": {
+      "fr": [
+        "Stattrak est une application web d’analyse de CV par intelligence artificielle. Elle s’appuie sur le contenu du CV pour proposer des axes d’amélioration et une note d’efficacité globale sur 100.",
+        "Ce projet m’a servi à me former aux modèles d’IA et à leur entraînement par renforcement."
+      ],
+      "en": [
+        "Stattrak is a web app that analyses resumes with artificial intelligence. Based on the resume’s content, it suggests areas for improvement and gives an overall effectiveness score out of 100.",
+        "I built it to train myself on AI models and reinforcement learning."
+      ]
+    },
+    "links": {
+      "demo": "https://stattrak.fr"
+    },
+    "cover": "stattrak-banner1.webp",
+    "gallery": [
+      "stattrak-banner.webp",
+      "stattrak-banner1.webp"
+    ]
   },
   {
     "id": "pixelwar",
     "slug": "pixelwar",
     "title": "PixelWar",
-    "description": {
-      "fr": "Canva de dessin collaboratif en temps réel",
-      "en": "Collaborative real-time pixel drawing canvas"
-    },
-    "tags": [
-      "HTML",
-      "CSS",
-      "JS",
-      "NodeJS"
-    ],
-    "date_start": {
-      "fr": "Mai 2025",
-      "en": "May 2025"
-    },
+    "featured": true,
+    "kind": "perso",
+    "status": "live",
+    "date_start": "2025-05",
     "date_end": null,
-    "available": true,
-    "image": "pixelwar.PNG",
-    "type": "Perso"
-  },
-  {
-    "id": "judge",
-    "slug": null,
-    "title": "Judge",
-    "description": {
-      "fr": "API de filtrage pour les évènements",
-      "en": "Event filtering API"
-    },
     "tags": [
-      "HTML",
-      "CSS",
-      "JS",
-      "BunJS",
-      "ReactJS"
+      "JavaScript",
+      "Node.js",
+      "Canvas"
     ],
-    "date_start": {
-      "fr": "Décembre 2024",
-      "en": "December 2024"
+    "summary": {
+      "fr": "Toile de pixels collaborative, synchronisée en temps réel entre tous les joueurs.",
+      "en": "Collaborative pixel canvas, synced in real time between all players."
     },
-    "date_end": null,
-    "available": false,
-    "image": "judge.png",
-    "type": "Perso"
+    "body": {
+      "fr": [
+        "PixelWar est une application web interactive où les utilisateurs placent des pixels sur une carte commune, en temps réel.",
+        "Le but : collaborer ou rivaliser pour créer des dessins collectifs. Le projet gère les actions des joueurs, la synchronisation des pixels et l’affichage en direct sur un canvas."
+      ],
+      "en": [
+        "PixelWar is an interactive web app where users place pixels on a shared map, in real time.",
+        "The goal: collaborate or compete to create collective drawings. The project handles player actions, pixel synchronisation and live rendering on a canvas."
+      ]
+    },
+    "links": {
+      "demo": "https://pixelwar.atlasentinel.fr"
+    },
+    "cover": "pixelwar-screen.webp",
+    "gallery": [
+      "pixelwar.webp",
+      "pixelwar-screen.webp"
+    ]
   },
   {
     "id": "bastion",
     "slug": "bastion",
     "title": "Bastion",
-    "description": {
-      "fr": "Projet de sécurité des accès d'un lieu physique.",
-      "en": "Physical access management security project"
+    "featured": false,
+    "kind": "school",
+    "status": "offline",
+    "date_start": "2023-10",
+    "date_end": "2024-10",
+    "tags": [
+      "React",
+      "Node.js",
+      "Python",
+      "Raspberry Pi"
+    ],
+    "summary": {
+      "fr": "Gestion des accès physiques d’une entreprise : API, application mobile et back-office.",
+      "en": "Physical access management for companies: API, mobile app and back office."
     },
+    "body": {
+      "fr": [
+        "Bastion est une application de gestion des accès à une infrastructure, réalisée dans le cadre du Bachelor Développeur Full Stack. Le cahier des charges imposait une API, une application mobile et un site web.",
+        "Les entreprises y enregistrent groupes, droits et utilisateurs, puis attribuent ces droits à des points d’accès. L’outil facilite le pointage et la gestion du temps de travail pour les ressources humaines."
+      ],
+      "en": [
+        "Bastion is an infrastructure access-management application built during the Full Stack Developer Bachelor. The brief required an API, a mobile app and a website.",
+        "Companies register groups, permissions and users, then assign those permissions to access points. It simplifies time tracking and working-hours management for HR teams."
+      ]
+    },
+    "links": {
+      "doc": "/files/bastion-dossier.pdf"
+    },
+    "cover": "bastion-screen-2.webp",
+    "gallery": [
+      "bastion-screen-1.webp",
+      "bastion-screen-2.webp"
+    ],
+    "cover_fit": "contain"
+  },
+  {
+    "id": "justyapping",
+    "slug": "justyapping",
+    "title": "JustYapping",
+    "featured": false,
+    "kind": "perso",
+    "status": "live",
+    "date_start": "2026-01",
+    "date_end": "2026-01",
     "tags": [
       "HTML",
       "CSS",
-      "JS",
-      "PYTHON",
-      "ReactJS",
-      "NodeJS",
-      "RASPBERRY"
+      "JavaScript"
     ],
-    "date_start": {
-      "fr": "Octobre 2023",
-      "en": "October 2023"
+    "summary": {
+      "fr": "Générateur de faux messages de tchat Twitch et Kick pour les monteurs vidéo.",
+      "en": "Twitch and Kick chat message generator for video editors."
     },
-    "date_end": {
-      "fr": "Octobre 2024",
-      "en": "October 2024"
+    "body": {
+      "fr": [
+        "JustYapping est un générateur de tchat pour les streamers Twitch et Kick : il crée des images qui reproduisent des messages de tchat.",
+        "L’outil aide les monteurs vidéo à générer des tchats réalistes sans avoir à enregistrer de vrais messages."
+      ],
+      "en": [
+        "JustYapping is a chat generator for Twitch and Kick streamers: it creates images that mimic chat messages.",
+        "It helps video editors produce realistic chats without having to record real ones."
+      ]
     },
-    "available": true,
-    "image": "projet-bastion.PNG",
-    "type": "Bac+3 D.F.S"
+    "links": {
+      "demo": "https://justyapping.online"
+    },
+    "cover": "justyapping-banner.webp",
+    "gallery": [
+      "justyapping-banner.webp"
+    ]
+  },
+  {
+    "id": "judge",
+    "slug": null,
+    "title": "Judge",
+    "featured": false,
+    "kind": "perso",
+    "status": "offline",
+    "date_start": "2024-12",
+    "date_end": null,
+    "tags": [
+      "React",
+      "Bun"
+    ],
+    "summary": {
+      "fr": "API de filtrage pour les évènements.",
+      "en": "Event filtering API."
+    },
+    "links": {},
+    "cover": "judge.webp",
+    "gallery": []
   },
   {
     "id": "coiffeur",
     "slug": "coiffeur",
     "title": "Coiffeur",
-    "description": {
-      "fr": "WebApp de prise de rendez-vous pour coiffeurs particuliers.",
-      "en": "Appointment booking webapp for independent hairdressers"
-    },
-    "tags": [
-      "HTML",
-      "CSS",
-      "JS",
-      "ReactJS",
-      "NodeJS"
-    ],
-    "date_start": {
-      "fr": "Mars 2024",
-      "en": "March 2024"
-    },
+    "featured": false,
+    "kind": "perso",
+    "status": "offline",
+    "date_start": "2024-03",
     "date_end": null,
-    "available": true,
-    "image": "projet-coiffeur.jpeg",
-    "type": "Perso"
-  },
-  {
-    "id": "clapin",
-    "slug": null,
-    "title": "Clapin",
-    "description": {
-      "fr": "Site web de streaming de film pour studio indépendant.",
-      "en": "Streaming website for an independent film studio"
-    },
     "tags": [
-      "HTML",
-      "CSS",
-      "JS",
-      "ReactJS",
-      "NodeJS"
+      "React",
+      "Node.js",
+      "REST"
     ],
-    "date_start": {
-      "fr": "Février 2024",
-      "en": "February 2024"
+    "summary": {
+      "fr": "Application de prise de rendez-vous pour coiffeurs indépendants.",
+      "en": "Appointment booking app for independent hairdressers."
     },
-    "date_end": null,
-    "available": false,
-    "image": "projet-clapin.PNG",
-    "type": "Perso"
+    "body": {
+      "fr": [
+        "Coiffeur est un site de prise de rendez-vous, développé pour apprendre à concevoir une API REST et une interface en React.",
+        "Le site, personnalisable selon l’enseigne, était pensé pour être proposé à des coiffeurs indépendants."
+      ],
+      "en": [
+        "Coiffeur is an appointment booking website, built to learn how to design a REST API and a React front end.",
+        "The site could be customised for each salon and was meant to be offered to independent hairdressers."
+      ]
+    },
+    "links": {},
+    "cover": "coiffeur-screen-2.webp",
+    "gallery": [
+      "coiffeur-screen-1.webp",
+      "coiffeur-screen-2.webp"
+    ]
   },
   {
     "id": "rach",
     "slug": "rach",
     "title": "RACH",
-    "description": {
-      "fr": "Catalogue de paires de chaussures",
-      "en": "Sneaker store e-catalog"
-    },
+    "featured": false,
+    "kind": "internship",
+    "status": "offline",
+    "date_start": "2023-01",
+    "date_end": "2023-02",
     "tags": [
-      "HTML",
-      "CSS",
-      "JS",
-      "JQuery",
       "PHP",
-      "SQL"
+      "SQL",
+      "jQuery"
     ],
-    "date_start": {
-      "fr": "Janvier 2023",
-      "en": "January 2023"
+    "summary": {
+      "fr": "Catalogue en ligne avec réservation pour une boutique de sneakers à Metz.",
+      "en": "Online catalogue with reservations for a sneaker shop in Metz."
     },
-    "date_end": {
-      "fr": "Février 2023",
-      "en": "February 2023"
+    "body": {
+      "fr": [
+        "RACH est une boutique de sneakers à Metz. Pendant mon stage, j’ai créé son site web pour lui donner plus de visibilité et une identité en ligne.",
+        "Le catalogue permettait de consulter les paires et leurs prix, de réserver une paire pour l’acheter en magasin, et de proposer ses propres chaussures à la revente."
+      ],
+      "en": [
+        "RACH is a sneaker shop in Metz. During my internship, I built its website to give it more visibility and an online identity.",
+        "The catalogue let visitors browse pairs and prices, reserve a pair to buy in store, and offer their own shoes for resale."
+      ]
     },
-    "available": true,
-    "image": "projet-rach.jfif",
-    "type": "Stage"
+    "links": {},
+    "cover": "rach-screen-1.webp",
+    "gallery": [
+      "projet-rach.webp",
+      "rach-screen-1.webp"
+    ]
   },
   {
     "id": "creche",
     "slug": "creche",
     "title": "La Cabane des lutins",
-    "description": {
-      "fr": "WebApp de gestion de micro-crèches",
-      "en": "Micro-nursery management webapp"
-    },
+    "featured": false,
+    "kind": "internship",
+    "status": "private",
+    "date_start": "2022-05",
+    "date_end": "2022-06",
     "tags": [
-      "HTML",
-      "CSS",
-      "JS",
-      "JQuery",
       "PHP",
-      "SQL"
+      "SQL",
+      "jQuery"
     ],
-    "date_start": {
-      "fr": "Mai 2022",
-      "en": "May 2022"
+    "summary": {
+      "fr": "Application de gestion pour un groupe de micro-crèches.",
+      "en": "Management web app for a group of micro-nurseries."
     },
-    "date_end": {
-      "fr": "Juin 2022",
-      "en": "June 2022"
+    "body": {
+      "fr": [
+        "Application web de gestion des crèches du groupe « La Cabane et le Clos des petits lutins », demandée par la directrice pour mieux organiser ses établissements.",
+        "Elle intègre une messagerie, une galerie photo et une gestion des droits des employés. Elle présente aussi les crèches et permet de contacter la directrice pour une inscription. L’espace reste privé."
+      ],
+      "en": [
+        "A web app to manage the nurseries of the “La Cabane et le Clos des petits lutins” group, requested by the director to better organise her facilities.",
+        "It includes messaging, a photo gallery and employee permission management. It also presents the nurseries and lets parents contact the director to enrol their child. The space is private."
+      ]
     },
-    "available": true,
-    "image": "projet-creche.jpg",
-    "type": "Stage"
+    "links": {},
+    "cover": "creche-screen-3.webp",
+    "gallery": [
+      "projet-creche.webp",
+      "creche-screen-1.webp",
+      "creche-screen-2.webp",
+      "creche-screen-3.webp"
+    ]
   },
   {
     "id": "stream-battle",
     "slug": "stream-battle",
     "title": "StreamBattle",
-    "description": {
-      "fr": "Jeu intéractif connecté à l'API Twitch pour jouer avec le chat",
-      "en": "Interactive game connected to the Twitch API to play with the chat"
-    },
+    "featured": false,
+    "kind": "perso",
+    "status": "live",
+    "date_start": "2021-01",
+    "date_end": "2021-01",
     "tags": [
-      "CSHARP"
+      "C#",
+      "Unity",
+      "Twitch API"
     ],
-    "date_start": {
-      "fr": "Janvier 2021",
-      "en": "January 2021"
+    "summary": {
+      "fr": "Jeu vidéo où le tchat Twitch affronte le streamer à coups de commandes.",
+      "en": "Video game where Twitch chat takes on the streamer through commands."
     },
-    "date_end": {
-      "fr": "Janvier 2021",
-      "en": "January 2021"
+    "body": {
+      "fr": [
+        "StreamBattle est un jeu vidéo de versus développé avec Unity et connecté à l’API de Twitch : un projet d’entraînement pour apprendre à interagir avec une API externe.",
+        "Les spectateurs jouent depuis le tchat en tapant des commandes, contre le streamer. Plusieurs niveaux : terrain de golf, pachinko, satellite."
+      ],
+      "en": [
+        "StreamBattle is a versus video game built with Unity and connected to the Twitch API: a practice project to learn how to work with an external API.",
+        "Viewers play from the chat by typing commands, against the streamer. Several levels: golf course, pachinko, satellite."
+      ]
     },
-    "available": true,
-    "image": "projet-streamBattle.png",
-    "type": "Perso"
+    "links": {
+      "demo": "https://gamejolt.com/games/StreamBattle/611873"
+    },
+    "cover": "sb-screen-1.webp",
+    "gallery": [
+      "bannerstreambattle.webp",
+      "sb-screen-1.webp",
+      "projet-streambattle.webp"
+    ]
   },
   {
     "id": "nycev",
     "slug": "nycev",
     "title": "NYCEV",
-    "description": {
-      "fr": "Robot Agriculteur autonome",
-      "en": "Autonomous agricultural robot"
-    },
+    "featured": false,
+    "kind": "school",
+    "status": "offline",
+    "date_start": "2019-01",
+    "date_end": "2020-03",
     "tags": [
-      "HTML",
-      "CSS",
-      "JS",
-      "PYTHON",
-      "JQuery",
-      "PHP",
-      "SQL",
-      "RASPBERRY",
-      "CPLUS",
-      "ARDUINO"
+      "Python",
+      "C++",
+      "Arduino",
+      "Raspberry Pi",
+      "PHP"
     ],
-    "date_start": {
-      "fr": "Mars 2020",
-      "en": "March 2020"
+    "summary": {
+      "fr": "Robot agriculteur autonome, avec site web et back-office (Bac STI2D).",
+      "en": "Autonomous farming robot, with website and back office (high-school engineering project)."
     },
-    "date_end": null,
-    "available": true,
-    "image": "projet-nycev.PNG",
-    "type": "Bac STI2D"
+    "body": {
+      "fr": [
+        "Projet de fin d’études du Bac STI2D (option SIN) : un robot agriculteur autonome, accompagné d’une application mobile et d’un site web.",
+        "Le site présentait le projet et devait accueillir un back-office pour gérer les routines du robot. NYCEV : Noé, Yohan, Cyprien, Enzo et Varen, les concepteurs du prototype."
+      ],
+      "en": [
+        "Final project of my engineering-track baccalaureate: an autonomous farming robot, with a mobile app and a website.",
+        "The website presented the project and was meant to host a back office to manage the robot’s routines. NYCEV stands for Noé, Yohan, Cyprien, Enzo and Varen, the team behind the prototype."
+      ]
+    },
+    "links": {},
+    "cover": "nycev-screen-1.webp",
+    "gallery": [
+      "nycev-screen-1.webp",
+      "nycev-screen-2.webp",
+      "nycev-screen-3.webp",
+      "nycev-screen-4.webp"
+    ]
   }
 ]

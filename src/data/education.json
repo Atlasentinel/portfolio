@@ -1,77 +1,33 @@
 [
   {
-    "id": "bac-sti2d",
-    "title": "Bac STI2D",
-    "description": {
-      "fr": "Sciences et Technologies de l'Industrie et du Développement Durable",
-      "en": "Science and Technology of Industry and Sustainable Development"
+    "id": "mastere",
+    "period": "2024 → 2026",
+    "title": {
+      "fr": "Mastère Architecture logicielle & ingénierie informatique",
+      "en": "Master’s in Software Architecture & Computer Engineering"
     },
-    "option": {
-      "fr": "Systèmes d'Informations et Numérique",
-      "en": "Information Systems and Digital"
-    },
-    "city": "Metz",
-    "school": "Lycée de la Communication",
-    "period": "2018 → 2020"
+    "detail": { "fr": "Bac+5, RNCP niveau 7, diplômé", "en": "RNCP level 7 (master’s level), graduated" },
+    "school": "Metz Numeric School"
   },
   {
-    "id": "dut-info",
-    "title": "DUT Informatique",
-    "description": {
-      "fr": "Diplôme Universitaire d'Informatique de Lorraine",
-      "en": "University Diploma in Computer Science from Lorraine"
-    },
-    "option": {
-      "fr": "Informatique",
-      "en": "Computer Science"
-    },
-    "city": "Metz",
-    "school": "Université de Lorraine",
-    "period": "2021 [❌]"
+    "id": "bachelor",
+    "period": "2023 → 2024",
+    "title": { "fr": "Bachelor Développeur Full Stack", "en": "Bachelor’s in Full Stack Development" },
+    "detail": { "fr": "Bac+3, RNCP niveau 6", "en": "RNCP level 6 (bachelor’s level)" },
+    "school": "Metz Numeric School"
   },
   {
-    "id": "bts-sio",
-    "title": "BTS SIO",
-    "description": {
-      "fr": "Services Informatiques aux Organisations",
-      "en": "IT Services for Organizations"
-    },
-    "option": {
-      "fr": "Solutions Logiciels et Application Metier",
-      "en": "Software Solutions and Business Applications"
-    },
-    "city": "Metz",
-    "school": "Lycée Technologique Robert Schuman",
-    "period": "2021 → 2023"
+    "id": "bts",
+    "period": "2021 → 2023",
+    "title": { "fr": "BTS SIO, option SLAM", "en": "BTS SIO, software development track" },
+    "detail": { "fr": "Bac+2", "en": "Two-year technical degree" },
+    "school": "Lycée Robert Schuman, Metz"
   },
   {
-    "id": "bachelor-dfs",
-    "title": "Bachelor DFS",
-    "description": {
-      "fr": "Centre de formation en Alternance",
-      "en": "Work-study Training Center"
-    },
-    "option": {
-      "fr": "Développeur Full Stack",
-      "en": "Full Stack Developer"
-    },
-    "city": "Metz",
-    "school": "Metz Numeric School",
-    "period": "2023 → 2024"
-  },
-  {
-    "id": "mastere-m2i",
-    "title": "Mastère M2I",
-    "description": {
-      "fr": "Centre de formation en Alternance",
-      "en": "Work-study Training Center"
-    },
-    "option": {
-      "fr": "Management et Ingénieurie Informatique",
-      "en": "IT Management and Engineering"
-    },
-    "city": "Metz",
-    "school": "Metz Numeric School",
-    "period": "2024 → 2026"
+    "id": "bac",
+    "period": "2018 → 2020",
+    "title": { "fr": "Bac STI2D, option SIN", "en": "Baccalauréat STI2D, digital systems" },
+    "detail": { "fr": "Systèmes d’information et numérique", "en": "Engineering & digital systems track" },
+    "school": "Lycée de la Communication, Metz"
   }
 ]

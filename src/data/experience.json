@@ -1,0 +1,35 @@
+[
+  {
+    "id": "moovijob",
+    "period": "2024 → 2026",
+    "company": "Moovijob",
+    "place": "Luxembourg",
+    "role": { "fr": "Développeur logiciel en alternance", "en": "Software developer (work-study)" },
+    "desc": {
+      "fr": "Mise en place d’un moteur de recherche boosté à l’IA (Meilisearch), montées de version PHP et Laravel.",
+      "en": "Built an AI-powered search engine (Meilisearch); handled PHP and Laravel upgrades."
+    }
+  },
+  {
+    "id": "chaussea",
+    "period": "2023 → 2024",
+    "company": "Chausséa",
+    "place": "Nancy",
+    "role": { "fr": "Développeur logiciel en alternance", "en": "Software developer (work-study)" },
+    "desc": {
+      "fr": "Correction de bugs, nouvelles fonctionnalités métier et création d’un module web d’étiquetage produit.",
+      "en": "Bug fixing, new business features and a web-based product labelling module."
+    }
+  },
+  {
+    "id": "stages",
+    "period": "2022 → 2023",
+    "company": "RACH · Le Clos des Lutins",
+    "place": "Metz",
+    "role": { "fr": "Développeur web en stage", "en": "Web developer (internships)" },
+    "desc": {
+      "fr": "Catalogue e-commerce pour une boutique de sneakers et application de gestion de micro-crèches.",
+      "en": "E-commerce catalogue for a sneaker shop and a management app for micro-nurseries."
+    }
+  }
+]

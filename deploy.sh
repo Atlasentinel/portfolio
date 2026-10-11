@@ -1,45 +1,34 @@
-#!/bin/bash
-# ─── deploy.sh — Déploiement du portfolio sur atlasentinel.fr ────────────────
-# Usage : bash deploy.sh
-# Prérequis : ssh configuré, bun installé sur le serveur, git push fait
+#!/usr/bin/env bash
+# ─── deploy.sh : déploiement du portfolio (version macOS / Linux / WSL) ──────
+# Équivalent de deploy.ps1. Voir DEPLOIEMENT.md.
+#
+#   bash deploy.sh                       # mise à jour
+#   WITH_ENV=1 bash deploy.sh            # envoie aussi backend/.env
+#   KEEP_SERVER_DATA=1 bash deploy.sh    # n'écrase pas src/data sur le serveur
+#   SERVER=user@hote REMOTE_DIR=/chemin bash deploy.sh
 
-SERVER="root@89.226.96.43"        # ou root@atlasentinel.fr
-REMOTE_DIR="/var/www/portfolio"    # dossier sur le serveur
+set -euo pipefail
 
-set -e
+SERVER="${SERVER:-root@atlasentinel.fr}"
+REMOTE_DIR="${REMOTE_DIR:-/var/www/portfolio}"
+ARCHIVE="$(mktemp -t portfolio-deploy.XXXXXX).tgz"
 
-echo "📦 [1/4] Build React..."
-npm run build
+cd "$(dirname "$0")"
 
-echo "🚀 [2/4] Envoi des fichiers sur le serveur..."
-rsync -avz --delete \
-  --exclude='node_modules' \
-  --exclude='.git' \
-  --exclude='src' \
-  --exclude='public' \
-  ./ "$SERVER:$REMOTE_DIR/"
+EXCLUDES=(--exclude=node_modules --exclude=build --exclude=.git --exclude='*.log')
+[[ "${WITH_ENV:-0}" == "1" ]] || EXCLUDES+=(--exclude=backend/.env)
+[[ "${KEEP_SERVER_DATA:-0}" == "1" ]] && EXCLUDES+=(--exclude=src/data)
 
-echo "⚙️  [3/4] Installation de Bun + dépendances sur le serveur..."
-ssh "$SERVER" "
-  cd $REMOTE_DIR/backend
-  curl -fsSL https://bun.sh/install | bash 2>/dev/null || true
-  export PATH=\"\$HOME/.bun/bin:\$PATH\"
-  bun --version
-"
+echo "1/3  Préparation de l'archive..."
+tar -czf "$ARCHIVE" "${EXCLUDES[@]}" .
 
-echo "🔄 [4/4] Redémarrage du service..."
-ssh "$SERVER" "
-  export PATH=\"\$HOME/.bun/bin:\$PATH\"
-  # Tue l'ancien process s'il tourne
-  pkill -f 'bun.*index.ts' 2>/dev/null || true
-  sleep 1
-  # Relance en arrière-plan avec nohup
-  cd $REMOTE_DIR/backend
-  nohup bun run index.ts > /var/log/portfolio.log 2>&1 &
-  echo 'Serveur démarré. PID:' \$!
-"
+echo "2/3  Envoi vers $SERVER..."
+scp "$ARCHIVE" "$SERVER:/tmp/portfolio-deploy.tgz"
+rm -f "$ARCHIVE"
 
-echo ""
-echo "✅ Déploiement terminé !"
-echo "   → https://atlasentinel.fr"
-echo "   → Logs : ssh $SERVER 'tail -f /var/log/portfolio.log'"
+echo "3/3  Construction et redémarrage du conteneur..."
+ssh "$SERVER" "set -e; mkdir -p '$REMOTE_DIR'; cd '$REMOTE_DIR'; tar xzf /tmp/portfolio-deploy.tgz; rm /tmp/portfolio-deploy.tgz; \
+  if [ ! -f backend/.env ]; then echo 'backend/.env manquant sur le serveur : relance avec WITH_ENV=1'; exit 1; fi; \
+  docker compose up -d --build; docker compose ps"
+
+echo "Déploiement terminé : https://atlasentinel.fr"

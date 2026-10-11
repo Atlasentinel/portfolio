@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# Portfolio — Noé Ziadi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React 19 + Vite (front) · Bun (serveur + petite API JSON) · FR / EN.
 
-## Available Scripts
+## Lancer en local
 
-In the project directory, you can run:
+```bash
+npm install
+npm run dev            # front sur http://localhost:3000
+cd backend && bun run dev   # API sur http://localhost:3001 (optionnel en dev)
+```
 
-### `npm start`
+## Mettre en production
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Guide complet (serveur, HTTPS, mises à jour, dépannage) : **[DEPLOIEMENT.md](./DEPLOIEMENT.md)**.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+En bref, depuis PowerShell :
 
-### `npm test`
+```powershell
+copy backend\.env.example backend\.env               # puis remplir ADMIN_KEY (≥ 32 caractères)
+.\deploy.ps1 -Server user@ton-serveur -WithEnv        # premier déploiement
+.\deploy.ps1 -Server user@ton-serveur                 # mises à jour
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Sans Docker : `npm run build` puis `bun run backend/index.ts` (port 3001).
 
-### `npm run build`
+## Où modifier quoi
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Quoi | Fichier |
+|---|---|
+| Textes de l'interface (titres, boutons, bio, compétences) | `src/i18n/fr.js` et `src/i18n/en.js` |
+| Projets (résumé, texte, captures, liens) | `src/data/projects.json` |
+| Expérience | `src/data/experience.json` |
+| Formation | `src/data/education.json` |
+| E-mail, GitHub, LinkedIn, CV | `src/config.js` |
+| CV et PDF téléchargeables | `public/files/` |
+| Couleurs, typo, espacements | variables en haut de `src/styles.css` |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Ajouter un projet
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Déposer les captures en `.webp` dans `src/assets/projects/` (largeur max conseillée : 1600 px).
+2. Ajouter une entrée dans `src/data/projects.json` :
 
-### `npm run eject`
+```json
+{
+  "id": "mon-projet",
+  "slug": "mon-projet",          // null = pas de page détaillée
+  "title": "Mon projet",
+  "featured": false,              // true = affiché sur l'accueil (6 max)
+  "kind": "perso",                // perso | client | school | internship
+  "status": "live",               // live | wip | offline | private
+  "date_start": "2026-03",        // AAAA-MM
+  "date_end": null,               // null = en cours
+  "tags": ["React", "Node.js"],
+  "summary": { "fr": "…", "en": "…" },
+  "body": { "fr": ["Paragraphe 1", "Paragraphe 2"], "en": ["…", "…"] },
+  "highlights": { "fr": ["Point 1"], "en": ["Point 1"] },
+  "links": { "demo": "https://…", "source": "https://github.com/…", "doc": "/files/…pdf" },
+  "cover": "mon-projet-1.webp",
+  "cover_fit": "contain",         // optionnel : pour un logo plutôt qu'une capture
+  "gallery": ["mon-projet-1.webp", "mon-projet-2.webp"]
+}
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. `npm run build`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+La page est disponible sur `/projets/mon-projet`. Les anciennes URL (`/pixelwar`, `/rach`…) redirigent automatiquement.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Langue
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Le site choisit la langue du navigateur, puis mémorise le choix du visiteur.
+Pour envoyer directement la version anglaise : `https://votre-domaine/?lang=en`.
 
-## Learn More
+## API
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Méthode | Route | Accès |
+|---|---|---|
+| GET | `/api/projects`, `/api/projects/:id`, `/api/education`, `/api/experience` | public |
+| GET | `/api/github/contributions` (graphe GitHub, mis en cache 6 h) | public |
+| POST | `/api/projects` | admin |
+| PUT / DELETE | `/api/projects/:id` | admin |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Les routes admin exigent `Authorization: Bearer <ADMIN_KEY>` **et** une IP listée dans `ADMIN_IPS`.
+Chaque projet envoyé est validé (champs, formats, URL https uniquement) ; les champs inconnus sont ignorés.
 
-### Code Splitting
+```bash
+curl -X PUT http://localhost:3001/api/projects/roger \
+  -H "Authorization: Bearer $ADMIN_KEY" -H "Content-Type: application/json" \
+  -d '{"status": "live", "links": {"demo": "https://r0ger.example"}}'
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Intégrations
 
-### Analyzing the Bundle Size
+- **Activité GitHub** (sous la photo) : le serveur lit le graphe public de `GITHUB_USER` et le met en cache 6 h.
+  Si GitHub ne répond pas, le site affiche l'instantané `src/data/github-snapshot.json`.
+- **Widget Uspot** (sous la photo, repliable) : script officiel `https://uspot.fr/widget.js`.
+  C'est la seule ressource externe : `uspot.fr` est autorisé dans la CSP de `backend/index.ts`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Sécurité (résumé)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- En-têtes : CSP stricte (`'self'`, plus `uspot.fr` pour le widget), `X-Frame-Options`, `nosniff`, `Referrer-Policy`, `Permissions-Policy`, HSTS optionnel.
+- Aucune source map publiée ; polices et icônes auto-hébergées (seul le widget Uspot vient de l'extérieur).
+- Fichiers statiques : protection contre le path traversal et les fichiers cachés.
+- Admin : clé ≥ 32 caractères comparée à temps constant, IP en correspondance exacte, `X-Forwarded-For` ignoré sauf `TRUST_PROXY=true`.
+- Écritures JSON validées, atomiques et sérialisées ; corps de requête limité à 256 Ko ; rate limiting.
+- Docker : `.env` jamais copié dans l'image, utilisateur non-root, système de fichiers en lecture seule.

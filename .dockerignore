@@ -1,7 +1,9 @@
+# Jamais de secrets ni de fichiers inutiles dans l'image
+**/.env
+**/.env.*
+!backend/.env.example
 node_modules
-.git
 build
-backend/.env
-*.md
-deploy.sh
-nginx.conf
+_ancien
+.git
+*.log

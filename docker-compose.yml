@@ -2,11 +2,18 @@ services:
   portfolio:
     build: .
     ports:
+      # Derrière un reverse proxy (nginx, Caddy…), préférez "127.0.0.1:3001:3001"
       - "3001:3001"
     env_file:
-      - backend/.env
+      - backend/.env   # injecté au démarrage, jamais copié dans l'image
     volumes:
-      # Les JSON sont montés en volume :
-      # tu peux les éditer sans rebuild l'image
+      # Les JSON restent éditables sans rebuild (via l'API admin ou à la main)
       - ./src/data:/app/src/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
     restart: unless-stopped
